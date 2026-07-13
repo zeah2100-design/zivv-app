@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>zivv - منصة التواصل الذكية</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
+  color: #fff;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+.container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+.hero { text-align: center; padding: 60px 20px; }
+.logo {
+  width: 100px; height: 100px;
+  background: linear-gradient(135deg, #8b5cf6, #ec4899);
+  border-radius: 25px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 50px;
+  font-weight: bold;
+  box-shadow: 0 10px 40px rgba(139, 92, 246, 0.4);
+  margin-bottom: 20px;
+}
+h1 {
+  font-size: 4rem;
+  background: linear-gradient(135deg, #8b5cf6, #ec4899);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 15px;
+}
+.subtitle { font-size: 1.3rem; color: #cbd5e1; margin-bottom: 40px; }
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  margin: 40px 0;
+}
+.feature {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 30px;
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.feature:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(139, 92, 246, 0.3);
+}
+.feature-icon { font-size: 3rem; margin-bottom: 15px; }
+.feature h3 { color: #8b5cf6; margin-bottom: 10px; font-size: 1.3rem; }
+.feature p { color: #94a3b8; line-height: 1.6; }
+.demo {
+  background: rgba(139, 92, 246, 0.1);
+  border: 2px solid rgba(139, 92, 246, 0.3);
+  border-radius: 20px;
+  padding: 30px;
+  margin: 30px 0;
+  text-align: center;
+}
+.demo h2 { color: #ec4899; margin-bottom: 20px; }
+.chat-box {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 15px;
+  padding: 20px;
+  margin: 20px 0;
+  min-height: 200px;
+  text-align: right;
+}
+.message {
+  background: rgba(139, 92, 246, 0.2);
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  border-radius: 10px;
+  padding: 12px;
+  margin: 8px 0;
+  animation: slideIn 0.5s;
+}
+@keyframes slideIn { from { opacity: 0; transform: translateX(20px); } to { opacity: 1; transform: translateX(0); } }
+.user-msg { background: rgba(236, 72, 153, 0.2); border-color: rgba(236, 72, 153, 0.3); text-align: right; }
+.ai-msg { background: rgba(139, 92, 246, 0.2); border-color: rgba(139, 92, 246, 0.3); }
+.input-box {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+input {
+  flex: 1;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  color: #fff;
+  font-size: 1rem;
+}
+button {
+  background: linear-gradient(135deg, #8b5cf6, #ec4899);
+  border: none;
+  color: #fff;
+  padding: 12px 25px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: transform 0.2s;
+}
+button:hover { transform: scale(1.05); }
+.cta {
+  text-align: center;
+  margin: 50px 0;
+}
+.cta a {
+  display: inline-block;
+  background: linear-gradient(135deg, #8b5cf6, #ec4899);
+  color: #fff;
+  padding: 15px 40px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+  box-shadow: 0 10px 30px rgba(139, 92, 246, 0.4);
+  transition: transform 0.3s;
+}
+.cta a:hover { transform: translateY(-3px); }
+.footer { text-align: center; padding: 30px; color: #64748b; }
+.status { display: inline-block; padding: 5px 15px; background: rgba(34, 197, 94, 0.2); border: 1px solid rgba(34, 197, 94, 0.3); border-radius: 20px; color: #22c55e; font-size: 0.9rem; }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="hero">
+    <div class="logo">z</div>
+    <h1>zivv</h1>
+    <p class="subtitle">منصة التواصل الاجتماعي الذكية</p>
+    <span class="status">● الموقع يعمل</span>
+  </div>
+
+  <div class="features">
+    <div class="feature">
+      <div class="feature-icon">💬</div>
+      <h3>دردشة حقيقية</h3>
+      <p>تواصل مع أصدقائك في الوقت الحقيقي مع إشعارات فورية ومؤشر "يكتب الآن"</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">✨</div>
+      <h3>ذكاء اصطناعي</h3>
+      <p>مساعدك الذكي zivv.AI يجيب على أسئلتك ويولد صوراً إبداعية</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">⭐</div>
+      <h3>النسخة الذهبية</h3>
+      <p>ميزات حصرية: صورة بروفايل، ثيمات مخصصة، بدون إعلانات</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">📹</div>
+      <h3>مكالمات فيديو</h3>
+      <p>مكالمات صوتية وفيديو داخل الدردشات</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">🌟</div>
+      <h3>حالات (Stories)</h3>
+      <p>شارك لحظاتك مع نص وصور وفيديو مع تخصيص كامل</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">👑</div>
+      <h3>لوحة الملك</h3>
+      <p>نظام إدارة متقدم للمؤسس مع صلاحيات كاملة</p>
+    </div>
+  </div>
+
+  <div class="demo">
+    <h2>🤖 جرب zivv.AI - النسخة التجريبية</h2>
+    <div class="chat-box" id="chatBox">
+      <div class="message ai-msg">
+        <strong>✨ zivv.AI:</strong> مرحباً! أنا مساعدك الذكي. اسألني أي شيء...
+      </div>
+    </div>
+    <div class="input-box">
+      <input type="text" id="userInput" placeholder="اكتب رسالتك..." onkeypress="if(event.key==='Enter') sendMsg()">
+      <button onclick="sendMsg()">إرسال</button>
+    </div>
+  </div>
+
+  <div class="cta">
+    <h2 style="margin-bottom: 20px;">🚀 قريباً: التطبيق الكامل</h2>
+    <p style="color: #cbd5e1; margin-bottom: 30px;">
+      نحن نعمل على إطلاق النسخة الكاملة قريباً مع جميع الميزات
+    </p>
+  </div>
+
+  <div class="footer">
+    <p>© 2026 zivv - جميع الحقوق محفوظة</p>
+    <p style="margin-top: 10px;">صنع بـ ❤️ من فريق zivv</p>
+  </div>
+</div>
+
+<script>
+const RESPONSES = {
+  greeting: ["أهلاً وسهلاً! كيف يمكنني مساعدتك؟", "مرحباً! سعيد بلقائك 😊", "هاي! شلونك؟"],
+  ai: ["الذكاء الاصطناعي هو مستقبل التكنولوجيا! 🤖", "أنا zivv.AI، مساعدك الذكي. أستطيع الإجابة على أسئلتك ومساعدتك في الكتابة الإبداعية.", "zivv.AI مبني على نماذج لغوية متقدمة ⚡"],
+  love: ["الحب هو أجمل شيء في الحياة ❤️", "البرمجة تشبه الحب - تحتاج صبر وشغف 💜"],
+  programming: ["البرمجة فن وإبداع! 🎨", "أفضل لغة برمجة؟ التي تحل مشكلتك! 💻", "ابدأ بـ Python - سهلة وقوية 🐍"],
+  thanks: ["العفو! 🙏", "بكل سرور! 😊", "أنا هنا دائماً لخدمتك ✨"],
+  default: ["سؤال رائع! دعني أفكر... 🤔", "هذا موضوع مثير للاهتمام!", "هل تريد أن أشرح أكثر؟", "جرّب أن تسألني عن الذكاء الاصطناعي أو البرمجة 💡"]
+};
+
+function sendMsg() {
+  const input = document.getElementById('userInput');
+  const chatBox = document.getElementById('chatBox');
+  const msg = input.value.trim();
+  if (!msg) return;
+  
+  // Add user message
+  const userDiv = document.createElement('div');
+  userDiv.className = 'message user-msg';
+  userDiv.innerHTML = '<strong>👤 أنت:</strong> ' + escapeHtml(msg);
+  chatBox.appendChild(userDiv);
+  
+  // Generate response
+  setTimeout(() => {
+    const lower = msg.toLowerCase();
+    let category = 'default';
+    if (lower.match(/مرحبا|سلام|هلا|صباح|مساء/)) category = 'greeting';
+    else if (lower.match(/ذكاء اصطناعي|ai|gpt/)) category = 'ai';
+    else if (lower.match(/حب|قلب|عشق/)) category = 'love';
+    else if (lower.match(/برمجة|كود|تطوير|programming/)) category = 'programming';
+    else if (lower.match(/شكر|thanks|مرسي/)) category = 'thanks';
+    
+    const responses = RESPONSES[category];
+    const reply = responses[Math.floor(Math.random() * responses.length)];
+    
+    const aiDiv = document.createElement('div');
+    aiDiv.className = 'message ai-msg';
+    aiDiv.innerHTML = '<strong>✨ zivv.AI:</strong> ' + reply;
+    chatBox.appendChild(aiDiv);
+    chatBox.scrollTop = chatBox.scrollHeight;
+  }, 500);
+  
+  input.value = '';
+  chatBox.scrollTop = chatBox.scrollHeight;
+}
+
+function escapeHtml(text) {
+  const div = document.createElement('div');
+  div.textContent = text;
+  return div.innerHTML;
+}
+</script>
+</body>
+</html>
