@@ -1,0 +1,18 @@
+{
+  "name": "zivv",
+  "version": "1.0.0",
+  "description": "zivv - Social media platform with AI",
+  "main": "index.js",
+  "scripts": {
+    "build": "echo 'Built via Next.js'",
+    "sync": "cap sync"
+  },
+  "keywords": ["capacitor", "zivv", "social"],
+  "author": "zeah2100",
+  "license": "MIT",
+  "dependencies": {
+    "@capacitor/android": "^5.0.0",
+    "@capacitor/core": "^5.0.0",
+    "@capacitor/ios": "^5.0.0"
+  }
+}
