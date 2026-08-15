@@ -137,7 +137,7 @@ export function SettingsPage({ user }: { user: SafeUser }) {
                 value={bio}
                 onChange={(e) => setBio(e.target.value)}
                 rows={3}
-                className="w-full resize-none rounded-2xl border border-white/10 bg-slate-800/50 p-3 text-slate-100 outline-none focus:border-violet-500"
+                className="w-full resize-none rounded-2xl border border-white/10 bg-slate-800/50 p-3 text-slate-100 outline-none focus:border-teal-500"
                 placeholder="تحدث عن نفسك..."
               />
             </div>
@@ -162,7 +162,7 @@ export function SettingsPage({ user }: { user: SafeUser }) {
                     onClick={() => toggleInterest(i)}
                     className={`rounded-full border px-3 py-1.5 text-xs ${
                       interests.includes(i)
-                        ? "border-violet-500 bg-violet-500/20 text-violet-200"
+                        ? "border-teal-500 bg-teal-500/20 text-teal-200"
                         : "border-white/10 bg-white/5 text-slate-300"
                     }`}
                   >
@@ -222,7 +222,7 @@ export function SettingsPage({ user }: { user: SafeUser }) {
             <button
               onClick={save}
               disabled={busy}
-              className="flex-1 rounded-2xl bg-gradient-to-l from-violet-600 to-fuchsia-600 py-3 text-sm font-semibold text-white shadow-lg shadow-violet-500/30 disabled:opacity-50"
+              className="flex-1 rounded-2xl bg-gradient-to-l from-teal-600 to-cyan-600 py-3 text-sm font-semibold text-white shadow-lg shadow-teal-500/30 disabled:opacity-50"
             >
               {busy ? "جاري الحفظ..." : "حفظ التغييرات"}
             </button>
@@ -257,7 +257,7 @@ function Field({ label, value, onChange, placeholder, type = "text" }: { label: 
         value={value}
         onChange={(e) => onChange(e.target.value)}
         placeholder={placeholder}
-        className="w-full rounded-xl border border-white/10 bg-slate-800/50 px-3 py-2 text-sm text-slate-100 outline-none focus:border-violet-500"
+        className="w-full rounded-xl border border-white/10 bg-slate-800/50 px-3 py-2 text-sm text-slate-100 outline-none focus:border-teal-500"
       />
     </div>
   );
@@ -272,7 +272,7 @@ function Toggle({ label, desc, checked, onChange, disabled = false }: { label: s
       </div>
       <button
         onClick={() => !disabled && onChange(!checked)}
-        className={`relative h-6 w-11 shrink-0 rounded-full transition ${checked ? "bg-violet-500" : "bg-white/10"} ${disabled ? "opacity-50" : ""}`}
+        className={`relative h-6 w-11 shrink-0 rounded-full transition ${checked ? "bg-teal-500" : "bg-white/10"} ${disabled ? "opacity-50" : ""}`}
       >
         <span
           className={`absolute top-0.5 h-5 w-5 rounded-full bg-white shadow transition-all ${checked ? "right-0.5" : "right-[1.375rem]"}`}
