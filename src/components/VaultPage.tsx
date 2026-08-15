@@ -76,7 +76,7 @@ export function VaultPage({ user }: { user: SafeUser }) {
             value={pin}
             onChange={(e) => setPin(e.target.value)}
             placeholder="••••"
-            className="w-full rounded-2xl border border-white/10 bg-slate-800/60 px-4 py-3 text-center text-2xl tracking-widest text-white outline-none focus:border-violet-500"
+            className="w-full rounded-2xl border border-white/10 bg-slate-800/60 px-4 py-3 text-center text-2xl tracking-widest text-white outline-none focus:border-teal-500"
           />
           <p className="text-xs text-slate-500">💡 للتجربة: استخدم 4 أحرف أو أكثر، أو جرّب "zivv2026"</p>
           {error && <p className="rounded-xl bg-rose-500/10 px-3 py-2 text-xs text-rose-300">{error}</p>}
