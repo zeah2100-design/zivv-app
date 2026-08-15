@@ -17,12 +17,12 @@ type Short = {
 };
 
 const GRADIENTS = [
-  "from-violet-700 via-fuchsia-600 to-rose-500",
+  "from-teal-700 via-cyan-600 to-rose-500",
   "from-cyan-600 via-blue-600 to-indigo-700",
   "from-emerald-600 via-teal-600 to-cyan-700",
   "from-amber-600 via-orange-600 to-rose-600",
-  "from-pink-600 via-fuchsia-700 to-violet-800",
-  "from-slate-800 via-violet-800 to-fuchsia-900",
+  "from-indigo-600 via-cyan-700 to-teal-800",
+  "from-slate-800 via-teal-800 to-cyan-900",
 ];
 
 function gradientFor(seed: string): string {
@@ -45,7 +45,7 @@ export function ShortsPage() {
         // provide demo shorts if none exist
         if (real.length === 0) {
           setShorts([
-            { id: -1, content: "تجربة تصفح عمودية بملء الشاشة! 🚀", mediaUrl: null, musicName: "Future Beats", views: 1240, likes: 89, createdAt: new Date().toISOString(), authorId: 0, authorFirst: "zivv", authorLast: "Demo", authorColor: "from-violet-500 to-fuchsia-500" },
+            { id: -1, content: "تجربة تصفح عمودية بملء الشاشة! 🚀", mediaUrl: null, musicName: "Future Beats", views: 1240, likes: 89, createdAt: new Date().toISOString(), authorId: 0, authorFirst: "zivv", authorLast: "Demo", authorColor: "from-teal-500 to-cyan-500" },
             { id: -2, content: "اسحب للأعلى لاستكشاف المزيد ✨", mediaUrl: null, musicName: "Calm Vibes", views: 890, likes: 45, createdAt: new Date().toISOString(), authorId: 0, authorFirst: "zivv", authorLast: "Studio", authorColor: "from-cyan-500 to-blue-500" },
             { id: -3, content: "أزرار الإعجاب والتعليق والاشتراك في متناول يدك", mediaUrl: null, musicName: "Pop Energy", views: 2100, likes: 173, createdAt: new Date().toISOString(), authorId: 0, authorFirst: "zivv", authorLast: "Shorts", authorColor: "from-amber-500 to-rose-500" },
           ]);
@@ -94,7 +94,7 @@ export function ShortsPage() {
               <div className="flex items-center gap-2">
                 <div
                   className={`flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br ${
-                    s.authorColor || "from-violet-500 to-fuchsia-500"
+                    s.authorColor || "from-teal-500 to-cyan-500"
                   } text-sm font-bold ring-2 ring-white/30`}
                 >
                   {s.authorFirst.charAt(0)}
