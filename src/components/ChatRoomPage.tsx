@@ -172,7 +172,7 @@ export function ChatRoomPage({ chatId, currentUser }: { chatId: number; currentU
             onChange={(e) => { setVaultPin(e.target.value); setPinError(null); }}
             placeholder="••••"
             dir="ltr"
-            className="w-full rounded-2xl border border-white/10 bg-slate-800/60 px-4 py-3 text-center text-2xl tracking-widest text-white outline-none focus:border-violet-500"
+            className="w-full rounded-2xl border border-white/10 bg-slate-800/60 px-4 py-3 text-center text-2xl tracking-widest text-white outline-none focus:border-teal-500"
           />
           {pinError && <p className="text-center text-xs text-rose-300">{pinError}</p>}
           <button type="submit" className="w-full rounded-2xl bg-gradient-to-l from-amber-500 to-rose-500 py-3 text-sm font-semibold text-white shadow-lg shadow-rose-500/30">فتح الخزنة</button>
@@ -189,7 +189,7 @@ export function ChatRoomPage({ chatId, currentUser }: { chatId: number; currentU
           <Link href="/chat" className="grid h-8 w-8 place-items-center rounded-xl bg-white/5 text-slate-400 hover:bg-white/10 hover:text-white lg:hidden">←</Link>
           <Link href={partner ? `/profile/${partner.id}` : "/chat"} className="flex items-center gap-3">
             <div className="relative">
-              <div className={`flex h-11 w-11 items-center justify-center rounded-full bg-gradient-to-br ${partner?.avatarColor || "from-violet-500 to-fuchsia-500"} text-sm font-bold text-white shadow-lg`}>
+              <div className={`flex h-11 w-11 items-center justify-center rounded-full bg-gradient-to-br ${partner?.avatarColor || "from-teal-500 to-cyan-500"} text-sm font-bold text-white shadow-lg`}>
                 {partner?.firstName.charAt(0) || "?"}
               </div>
               {partnerOnline && <span className="absolute -bottom-0.5 -left-0.5 h-3 w-3 rounded-full bg-emerald-400 ring-2 ring-slate-900" />}
@@ -236,7 +236,7 @@ export function ChatRoomPage({ chatId, currentUser }: { chatId: number; currentU
                   {!mine && (
                     <div className={`h-7 w-7 shrink-0 ${showAvatar ? "" : "invisible"}`}>
                       {isAi ? (
-                        <div className="flex h-7 w-7 items-center justify-center rounded-full bg-gradient-to-br from-violet-500 to-fuchsia-500 text-xs">✨</div>
+                        <div className="flex h-7 w-7 items-center justify-center rounded-full bg-gradient-to-br from-teal-500 to-cyan-500 text-xs">✨</div>
                       ) : (
                         <div className={`flex h-7 w-7 items-center justify-center rounded-full bg-gradient-to-br ${partner?.avatarColor || "from-emerald-500 to-teal-500"} text-[10px] font-bold text-white`}>
                           {partner?.firstName.charAt(0)}
@@ -247,13 +247,13 @@ export function ChatRoomPage({ chatId, currentUser }: { chatId: number; currentU
                   <div
                     className={`rounded-2xl px-4 py-2 text-sm leading-relaxed shadow-sm ${
                       mine
-                        ? "rounded-tr-md bg-gradient-to-l from-violet-600 to-fuchsia-600 text-white"
+                        ? "rounded-tr-md bg-gradient-to-l from-teal-600 to-cyan-600 text-white"
                         : isAi
-                        ? "rounded-tl-md bg-white/[0.06] text-slate-100 ring-1 ring-violet-500/30"
+                        ? "rounded-tl-md bg-white/[0.06] text-slate-100 ring-1 ring-teal-500/30"
                         : "rounded-tl-md bg-white/[0.04] text-slate-100"
                     }`}
                   >
-                    {isAi && <p className="mb-0.5 text-[10px] font-semibold text-violet-300">✨ MiniMax</p>}
+                    {isAi && <p className="mb-0.5 text-[10px] font-semibold text-teal-300">✨ MiniMax</p>}
                     <p className="whitespace-pre-wrap break-words">{m.content}</p>
                     <p className={`mt-1 text-[10px] ${mine ? "text-white/70" : "text-slate-500"}`}>
                       {formatTimeAgo(m.createdAt)}
@@ -266,12 +266,12 @@ export function ChatRoomPage({ chatId, currentUser }: { chatId: number; currentU
         )}
         {aiTyping && (
           <div className="flex justify-start">
-            <div className="flex items-center gap-2 rounded-2xl bg-white/[0.06] px-4 py-3 ring-1 ring-violet-500/30">
-              <span className="text-[10px] text-violet-300">✨ MiniMax يكتب</span>
+            <div className="flex items-center gap-2 rounded-2xl bg-white/[0.06] px-4 py-3 ring-1 ring-teal-500/30">
+              <span className="text-[10px] text-teal-300">✨ MiniMax يكتب</span>
               <span className="flex gap-1">
-                <span className="typing-dot h-1.5 w-1.5 rounded-full bg-violet-400"></span>
-                <span className="typing-dot h-1.5 w-1.5 rounded-full bg-violet-400"></span>
-                <span className="typing-dot h-1.5 w-1.5 rounded-full bg-violet-400"></span>
+                <span className="typing-dot h-1.5 w-1.5 rounded-full bg-teal-400"></span>
+                <span className="typing-dot h-1.5 w-1.5 rounded-full bg-teal-400"></span>
+                <span className="typing-dot h-1.5 w-1.5 rounded-full bg-teal-400"></span>
               </span>
             </div>
           </div>
@@ -315,12 +315,12 @@ export function ChatRoomPage({ chatId, currentUser }: { chatId: number; currentU
             onChange={(e) => handleTextChange(e.target.value)}
             onKeyDown={(e) => e.key === "Enter" && !e.shiftKey && send()}
             placeholder="اكتب رسالة..."
-            className="flex-1 rounded-2xl border border-white/10 bg-slate-800/50 px-4 py-2.5 text-slate-100 outline-none placeholder:text-slate-500 focus:border-violet-500"
+            className="flex-1 rounded-2xl border border-white/10 bg-slate-800/50 px-4 py-2.5 text-slate-100 outline-none placeholder:text-slate-500 focus:border-teal-500"
           />
           <button
             onClick={send}
             disabled={busy || !text.trim()}
-            className="rounded-2xl bg-gradient-to-l from-violet-600 to-fuchsia-600 px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-violet-500/30 hover:shadow-violet-500/50 disabled:opacity-50"
+            className="rounded-2xl bg-gradient-to-l from-teal-600 to-cyan-600 px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-teal-500/30 hover:shadow-teal-500/50 disabled:opacity-50"
           >
             ➤
           </button>
