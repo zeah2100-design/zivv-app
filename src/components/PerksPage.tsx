@@ -41,7 +41,7 @@ export function PerksPage({ user, perks: initialPerks }: { user: SafeUser; perks
   const [avatarUploading, setAvatarUploading] = useState(false);
   const [avatarUrl, setAvatarUrl] = useState<string | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
-  const [theme, setTheme] = useState<"violet" | "gold" | "ocean" | "sunset">("violet");
+  const [theme, setTheme] = useState<"teal" | "gold" | "ocean" | "sunset">("teal");
 
   async function togglePerk(key: keyof NonNullable<Perks>) {
     if (!perks) return;
@@ -141,7 +141,7 @@ export function PerksPage({ user, perks: initialPerks }: { user: SafeUser; perks
           <h3 className="mb-3 text-sm font-semibold text-white">📸 صورة بروفايل مخصصة</h3>
           <input ref={fileInputRef} type="file" accept="image/*" onChange={handleAvatar} className="hidden" />
           <div className="flex items-center gap-4">
-            <div className={`flex h-20 w-20 items-center justify-center rounded-2xl bg-gradient-to-br ${user.avatarColor || "from-violet-500 to-fuchsia-500"} text-2xl font-bold text-white shadow-lg overflow-hidden`}>
+            <div className={`flex h-20 w-20 items-center justify-center rounded-2xl bg-gradient-to-br ${user.avatarColor || "from-teal-500 to-cyan-500"} text-2xl font-bold text-white shadow-lg overflow-hidden`}>
               {avatarUrl ? <img src={avatarUrl} alt="" className="h-full w-full object-cover" /> : user.firstName.charAt(0)}
             </div>
             <div className="flex-1">
@@ -164,7 +164,7 @@ export function PerksPage({ user, perks: initialPerks }: { user: SafeUser; perks
           <h3 className="mb-3 text-sm font-semibold text-white">🎨 ثيم مخصص</h3>
           <div className="grid grid-cols-4 gap-2">
             {[
-              { v: "violet", g: "from-violet-500 to-fuchsia-500" },
+              { v: "teal", g: "from-teal-500 to-cyan-500" },
               { v: "gold", g: "from-amber-400 to-orange-500" },
               { v: "ocean", g: "from-cyan-500 to-blue-600" },
               { v: "sunset", g: "from-rose-500 to-orange-500" },
