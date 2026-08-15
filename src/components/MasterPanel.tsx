@@ -483,7 +483,7 @@ export function MasterPanel({ user, isMaster }: { user: SafeUser; isMaster: bool
                 }`}
               >
                 <div className="flex items-center gap-3">
-                  <div className={`flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br ${r.avatarColor || "from-violet-500 to-fuchsia-500"} text-base font-bold text-white`}>
+                  <div className={`flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br ${r.avatarColor || "from-teal-500 to-cyan-500"} text-base font-bold text-white`}>
                     {r.firstName.charAt(0)}
                   </div>
                   <div className="flex-1 min-w-0">
@@ -531,7 +531,7 @@ export function MasterPanel({ user, isMaster }: { user: SafeUser; isMaster: bool
           ) : (
             users.map((u) => (
               <div key={u.id} className="flex items-center gap-3 rounded-2xl border border-white/5 bg-slate-900/60 p-3">
-                <div className={`flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-br ${u.avatarColor || "from-violet-500 to-fuchsia-500"} text-sm font-bold text-white`}>
+                <div className={`flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-br ${u.avatarColor || "from-teal-500 to-cyan-500"} text-sm font-bold text-white`}>
                   {u.firstName.charAt(0)}
                 </div>
                 <div className="flex-1 min-w-0">
