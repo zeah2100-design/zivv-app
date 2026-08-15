@@ -25,12 +25,12 @@ type PostRow = {
 };
 
 const SAMPLE_GRADIENTS = [
-  "from-violet-600 via-fuchsia-600 to-pink-500",
+  "from-teal-600 via-cyan-600 to-indigo-500",
   "from-cyan-500 via-sky-500 to-blue-600",
   "from-emerald-500 via-teal-500 to-cyan-600",
   "from-amber-500 via-orange-500 to-rose-500",
-  "from-rose-500 via-pink-500 to-fuchsia-500",
-  "from-indigo-600 via-violet-600 to-purple-600",
+  "from-rose-500 via-indigo-500 to-cyan-500",
+  "from-indigo-600 via-teal-600 to-purple-600",
 ];
 
 function pickGradient(seed: string): string {
@@ -137,7 +137,7 @@ export function FeedPage({ user }: { user: SafeUser }) {
         </div>
         <Link
           href="/post"
-          className="rounded-2xl bg-gradient-to-l from-violet-600 to-fuchsia-600 px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-violet-500/30 hover:from-violet-500 hover:to-fuchsia-500"
+          className="rounded-2xl bg-gradient-to-l from-teal-600 to-cyan-600 px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-teal-500/30 hover:from-teal-500 hover:to-cyan-500"
         >
           ✚ منشور جديد
         </Link>
@@ -156,7 +156,7 @@ export function FeedPage({ user }: { user: SafeUser }) {
             onClick={() => setFilter(f.k as typeof filter)}
             className={`rounded-full px-4 py-1.5 text-xs font-medium transition ${
               filter === (f.k as typeof filter)
-                ? "bg-violet-500/30 text-violet-100 ring-1 ring-violet-400/50"
+                ? "bg-teal-500/30 text-teal-100 ring-1 ring-teal-400/50"
                 : "bg-white/5 text-slate-300 hover:bg-white/10"
             }`}
           >
@@ -179,7 +179,7 @@ export function FeedPage({ user }: { user: SafeUser }) {
           </p>
           <Link
             href="/post"
-            className="mt-4 inline-block rounded-2xl bg-violet-600 px-4 py-2 text-sm font-semibold text-white"
+            className="mt-4 inline-block rounded-2xl bg-teal-600 px-4 py-2 text-sm font-semibold text-white"
           >
             إنشاء منشور
           </Link>
@@ -197,7 +197,7 @@ export function FeedPage({ user }: { user: SafeUser }) {
               >
                 <div
                   className={`flex h-11 w-11 items-center justify-center rounded-full bg-gradient-to-br ${
-                    post.authorColor || "from-violet-500 to-fuchsia-500"
+                    post.authorColor || "from-teal-500 to-cyan-500"
                   } text-sm font-bold text-white`}
                 >
                   {post.authorFirst.charAt(0)}
@@ -226,7 +226,7 @@ export function FeedPage({ user }: { user: SafeUser }) {
                     {post.tags.map((t) => (
                       <span
                         key={t}
-                        className="rounded-full bg-violet-500/15 px-2.5 py-0.5 text-xs text-violet-200"
+                        className="rounded-full bg-teal-500/15 px-2.5 py-0.5 text-xs text-teal-200"
                       >
                         #{t}
                       </span>
@@ -312,7 +312,7 @@ export function FeedPage({ user }: { user: SafeUser }) {
               </Link>
               <button
                 onClick={() => aiSuggest(post.id, post.content)}
-                className="flex items-center gap-1.5 rounded-xl px-3 py-2 text-sm text-violet-300 hover:bg-violet-500/10"
+                className="flex items-center gap-1.5 rounded-xl px-3 py-2 text-sm text-teal-300 hover:bg-teal-500/10"
                 title="تعليق ذكي"
               >
                 ✨ {aiBusy === post.id ? "..." : "تعليق ذكي"}
@@ -333,8 +333,8 @@ export function FeedPage({ user }: { user: SafeUser }) {
       )}
 
       {aiComment && (
-        <div className="fixed inset-x-0 bottom-4 z-50 mx-auto w-full max-w-md rounded-3xl border border-violet-500/30 bg-slate-900/95 p-5 shadow-2xl backdrop-blur">
-          <h3 className="text-sm font-semibold text-violet-200">✨ تعليق ذكي مقترح</h3>
+        <div className="fixed inset-x-0 bottom-4 z-50 mx-auto w-full max-w-md rounded-3xl border border-teal-500/30 bg-slate-900/95 p-5 shadow-2xl backdrop-blur">
+          <h3 className="text-sm font-semibold text-teal-200">✨ تعليق ذكي مقترح</h3>
           <p className="mt-2 text-sm text-slate-100">{aiComment.text}</p>
           <div className="mt-3 flex justify-end gap-2">
             <button
@@ -345,7 +345,7 @@ export function FeedPage({ user }: { user: SafeUser }) {
             </button>
             <button
               onClick={submitAiComment}
-              className="rounded-xl bg-gradient-to-l from-violet-600 to-fuchsia-600 px-4 py-2 text-sm font-semibold text-white"
+              className="rounded-xl bg-gradient-to-l from-teal-600 to-cyan-600 px-4 py-2 text-sm font-semibold text-white"
             >
               نشر التعليق
             </button>
