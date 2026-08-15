@@ -108,10 +108,10 @@ export function NotificationBell() {
       {open && (
         <div className="absolute end-0 top-11 z-50 w-80 max-h-[500px] overflow-hidden rounded-2xl border border-white/10 bg-slate-900/95 shadow-2xl backdrop-blur-xl">
           <div className="flex items-center justify-between border-b border-white/5 p-3">
-            <p className="text-sm font-semibold text-white">الإشعارات {unreadCount > 0 && <span className="ms-1 text-violet-300">({unreadCount})</span>}</p>
+            <p className="text-sm font-semibold text-white">الإشعارات {unreadCount > 0 && <span className="ms-1 text-teal-300">({unreadCount})</span>}</p>
             <div className="flex gap-2">
               {unreadCount > 0 && (
-                <button onClick={markAllRead} disabled={loading} className="text-[10px] text-violet-300 hover:text-violet-200">
+                <button onClick={markAllRead} disabled={loading} className="text-[10px] text-teal-300 hover:text-teal-200">
                   ✓ قراءة الكل
                 </button>
               )}
@@ -139,14 +139,14 @@ export function NotificationBell() {
                     setOpen(false);
                   }}
                   className={`flex items-start gap-2 border-b border-white/5 p-3 last:border-0 transition ${
-                    n.isRead ? "bg-transparent" : "bg-violet-500/5"
+                    n.isRead ? "bg-transparent" : "bg-teal-500/5"
                   } hover:bg-white/5`}
                 >
                   <div className="text-2xl">{NOTIF_ICONS[n.type] || "🔔"}</div>
                   <div className="min-w-0 flex-1">
                     <div className="flex items-center gap-1.5">
                       {n.fromFirstName && (
-                        <div className={`flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-gradient-to-br ${n.fromAvatarColor || "from-violet-500 to-fuchsia-500"} text-[10px] font-bold text-white`}>
+                        <div className={`flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-gradient-to-br ${n.fromAvatarColor || "from-teal-500 to-cyan-500"} text-[10px] font-bold text-white`}>
                           {n.fromFirstName.charAt(0)}
                         </div>
                       )}
