@@ -1,7 +1,7 @@
 export function Logo({ size = 40 }: { size?: number }) {
   return (
     <div
-      className="relative flex items-center justify-center rounded-2xl bg-gradient-to-br from-violet-500 via-fuchsia-500 to-pink-500 text-white shadow-lg shadow-violet-500/40"
+      className="relative flex items-center justify-center rounded-2xl bg-gradient-to-br from-teal-500 via-cyan-500 to-indigo-500 text-white shadow-lg shadow-teal-500/40"
       style={{ width: size, height: size }}
       aria-label="zivv logo"
     >
