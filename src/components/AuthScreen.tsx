@@ -100,8 +100,8 @@ export function AuthScreen() {
   return (
     <div className="relative grid min-h-screen place-items-center overflow-hidden bg-slate-950 px-4 py-10 text-slate-100">
       <div className="pointer-events-none absolute inset-0">
-        <div className="absolute -top-32 -right-32 h-96 w-96 rounded-full bg-violet-600/30 blur-3xl" />
-        <div className="absolute -bottom-32 -left-32 h-96 w-96 rounded-full bg-fuchsia-600/30 blur-3xl" />
+        <div className="absolute -top-32 -right-32 h-96 w-96 rounded-full bg-teal-600/30 blur-3xl" />
+        <div className="absolute -bottom-32 -left-32 h-96 w-96 rounded-full bg-cyan-600/30 blur-3xl" />
         <div className="absolute top-1/2 left-1/2 h-72 w-72 -translate-x-1/2 -translate-y-1/2 rounded-full bg-cyan-500/20 blur-3xl" />
       </div>
 
@@ -116,7 +116,7 @@ export function AuthScreen() {
           </div>
           <h2 className="text-3xl font-bold leading-tight text-white">
             تواصل، أبدع، <br />
-            <span className="bg-gradient-to-l from-violet-400 to-fuchsia-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-l from-teal-400 to-cyan-400 bg-clip-text text-transparent">
               بأمان تام.
             </span>
           </h2>
@@ -125,11 +125,11 @@ export function AuthScreen() {
             مكتبة موسيقية، دردشة مشفّرة، وفيديوهات قصيرة.
           </p>
           <ul className="mt-6 space-y-2 text-sm text-slate-300">
-            <li className="flex items-center gap-2"><span className="text-violet-400">●</span> حماية عمرية تلقائية (18+)</li>
-            <li className="flex items-center gap-2"><span className="text-violet-400">●</span> دخول آمن بالاسم + كلمة المرور</li>
-            <li className="flex items-center gap-2"><span className="text-violet-400">●</span> ربط بالبريد/الهاتف لاسترداد الحساب</li>
-            <li className="flex items-center gap-2"><span className="text-violet-400">●</span> تشفير تام للرسائل والخزنة</li>
-            <li className="flex items-center gap-2"><span className="text-violet-400">●</span> ذكاء اصطناعي مدمج (MiniMax)</li>
+            <li className="flex items-center gap-2"><span className="text-teal-400">●</span> حماية عمرية تلقائية (18+)</li>
+            <li className="flex items-center gap-2"><span className="text-teal-400">●</span> دخول آمن بالاسم + كلمة المرور</li>
+            <li className="flex items-center gap-2"><span className="text-teal-400">●</span> ربط بالبريد/الهاتف لاسترداد الحساب</li>
+            <li className="flex items-center gap-2"><span className="text-teal-400">●</span> تشفير تام للرسائل والخزنة</li>
+            <li className="flex items-center gap-2"><span className="text-teal-400">●</span> ذكاء اصطناعي مدمج (MiniMax)</li>
           </ul>
         </div>
 
@@ -143,7 +143,7 @@ export function AuthScreen() {
             <button
               onClick={() => { setMode("signup"); setError(null); }}
               className={`rounded-xl py-2.5 font-semibold transition ${
-                mode === "signup" ? "bg-gradient-to-l from-violet-600 to-fuchsia-600 text-white shadow" : "text-slate-300"
+                mode === "signup" ? "bg-gradient-to-l from-teal-600 to-cyan-600 text-white shadow" : "text-slate-300"
               }`}
             >
               حساب جديد
@@ -151,7 +151,7 @@ export function AuthScreen() {
             <button
               onClick={() => { setMode("login"); setError(null); }}
               className={`rounded-xl py-2.5 font-semibold transition ${
-                mode === "login" ? "bg-gradient-to-l from-violet-600 to-fuchsia-600 text-white shadow" : "text-slate-300"
+                mode === "login" ? "bg-gradient-to-l from-teal-600 to-cyan-600 text-white shadow" : "text-slate-300"
               }`}
             >
               تسجيل الدخول
@@ -183,7 +183,7 @@ export function AuthScreen() {
                   value={age}
                   onChange={(e) => setAge(e.target.value)}
                   placeholder="مثال: 24"
-                  className="w-full rounded-2xl border border-white/10 bg-slate-800/60 px-4 py-3 text-white outline-none focus:border-violet-500 focus:ring-2 focus:ring-violet-500/30"
+                  className="w-full rounded-2xl border border-white/10 bg-slate-800/60 px-4 py-3 text-white outline-none focus:border-teal-500 focus:ring-2 focus:ring-teal-500/30"
                 />
                 <p className="mt-1 text-xs text-amber-300/80">⚠️ يجب أن يكون 18+</p>
               </div>
@@ -204,7 +204,7 @@ export function AuthScreen() {
                     onChange={(e) => setIdentifier(e.target.value)}
                     placeholder="name@example.com  أو  +9665XXXXXXXX"
                     dir="ltr"
-                    className="w-full rounded-2xl border border-white/10 bg-slate-800/60 px-4 py-3 ps-12 text-white placeholder-slate-500 outline-none focus:border-violet-500 focus:ring-2 focus:ring-violet-500/30"
+                    className="w-full rounded-2xl border border-white/10 bg-slate-800/60 px-4 py-3 ps-12 text-white placeholder-slate-500 outline-none focus:border-teal-500 focus:ring-2 focus:ring-teal-500/30"
                   />
                 </div>
                 {identifier && (
@@ -225,7 +225,7 @@ export function AuthScreen() {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   placeholder="••••••••"
-                  className="w-full rounded-2xl border border-white/10 bg-slate-800/60 px-4 py-3 pe-12 text-white outline-none focus:border-violet-500 focus:ring-2 focus:ring-violet-500/30"
+                  className="w-full rounded-2xl border border-white/10 bg-slate-800/60 px-4 py-3 pe-12 text-white outline-none focus:border-teal-500 focus:ring-2 focus:ring-teal-500/30"
                 />
                 <button
                   type="button"
@@ -248,7 +248,7 @@ export function AuthScreen() {
                   className={`w-full rounded-2xl border bg-slate-800/60 px-4 py-3 text-white outline-none focus:ring-2 ${
                     confirmPassword && confirmPassword !== password
                       ? "border-rose-500 focus:border-rose-500 focus:ring-rose-500/30"
-                      : "border-white/10 focus:border-violet-500 focus:ring-violet-500/30"
+                      : "border-white/10 focus:border-teal-500 focus:ring-teal-500/30"
                   }`}
                 />
                 {confirmPassword && confirmPassword === password && (
@@ -268,7 +268,7 @@ export function AuthScreen() {
                       onClick={() => toggleInterest(i)}
                       className={`rounded-full border px-3 py-1.5 text-xs transition ${
                         interests.includes(i)
-                          ? "border-violet-500 bg-violet-500/20 text-violet-200"
+                          ? "border-teal-500 bg-teal-500/20 text-teal-200"
                           : "border-white/10 bg-white/5 text-slate-300 hover:bg-white/10"
                       }`}
                     >
@@ -288,7 +288,7 @@ export function AuthScreen() {
             <button
               type="submit"
               disabled={pending}
-              className="w-full rounded-2xl bg-gradient-to-l from-violet-600 to-fuchsia-600 px-4 py-3.5 text-base font-semibold text-white shadow-lg shadow-violet-500/30 transition hover:from-violet-500 hover:to-fuchsia-500 disabled:cursor-not-allowed disabled:opacity-60"
+              className="w-full rounded-2xl bg-gradient-to-l from-teal-600 to-cyan-600 px-4 py-3.5 text-base font-semibold text-white shadow-lg shadow-teal-500/30 transition hover:from-teal-500 hover:to-cyan-500 disabled:cursor-not-allowed disabled:opacity-60"
             >
               {pending
                 ? "جارٍ المعالجة..."
@@ -328,7 +328,7 @@ function Field({
         value={value}
         onChange={(e) => onChange(e.target.value)}
         placeholder={placeholder}
-        className="w-full rounded-2xl border border-white/10 bg-slate-800/60 px-4 py-3 text-white placeholder-slate-500 outline-none focus:border-violet-500 focus:ring-2 focus:ring-violet-500/30"
+        className="w-full rounded-2xl border border-white/10 bg-slate-800/60 px-4 py-3 text-white placeholder-slate-500 outline-none focus:border-teal-500 focus:ring-2 focus:ring-teal-500/30"
       />
     </div>
   );
