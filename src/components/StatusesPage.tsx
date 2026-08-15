@@ -27,8 +27,8 @@ type Status = {
 type Tab = "feed" | "create";
 
 const GRADIENTS = [
-  { name: "بنفسجي", value: "from-violet-500 to-fuchsia-500" },
-  { name: "وردي", value: "from-pink-500 to-rose-500" },
+  { name: "بنفسجي", value: "from-teal-500 to-cyan-500" },
+  { name: "وردي", value: "from-indigo-500 to-rose-500" },
   { name: "برتقالي", value: "from-amber-500 to-orange-500" },
   { name: "أخضر", value: "from-emerald-500 to-teal-500" },
   { name: "أزرق", value: "from-sky-500 to-cyan-500" },
@@ -203,7 +203,7 @@ export function StatusesPage({ user }: { user: SafeUser }) {
     <div className="space-y-6">
       <header>
         <h1 className="text-3xl font-bold text-white">
-          🌟 <span className="bg-gradient-to-l from-violet-400 to-fuchsia-400 bg-clip-text text-transparent">الحالات</span>
+          🌟 <span className="bg-gradient-to-l from-teal-400 to-cyan-400 bg-clip-text text-transparent">الحالات</span>
         </h1>
         <p className="mt-1 text-sm text-slate-400">
           شارك لحظاتك مع نص وصور وفيديو · تنتهي بعد 24 ساعة
@@ -214,7 +214,7 @@ export function StatusesPage({ user }: { user: SafeUser }) {
         <button
           onClick={() => setTab("feed")}
           className={`flex-1 rounded-xl py-2 font-semibold transition ${
-            tab === "feed" ? "bg-gradient-to-l from-violet-600 to-fuchsia-600 text-white" : "text-slate-300"
+            tab === "feed" ? "bg-gradient-to-l from-teal-600 to-cyan-600 text-white" : "text-slate-300"
           }`}
         >
           👁️ مشاهدة
@@ -222,7 +222,7 @@ export function StatusesPage({ user }: { user: SafeUser }) {
         <button
           onClick={() => setTab("create")}
           className={`flex-1 rounded-xl py-2 font-semibold transition ${
-            tab === "create" ? "bg-gradient-to-l from-violet-600 to-fuchsia-600 text-white" : "text-slate-300"
+            tab === "create" ? "bg-gradient-to-l from-teal-600 to-cyan-600 text-white" : "text-slate-300"
           }`}
         >
           ✨ إنشاء حالة
@@ -248,7 +248,7 @@ export function StatusesPage({ user }: { user: SafeUser }) {
               <p className="mt-1 text-sm text-slate-500">كن أول من ينشر حالة!</p>
               <button
                 onClick={() => setTab("create")}
-                className="mt-4 rounded-2xl bg-violet-500/20 px-5 py-2 text-sm text-violet-200 hover:bg-violet-500/30"
+                className="mt-4 rounded-2xl bg-teal-500/20 px-5 py-2 text-sm text-teal-200 hover:bg-teal-500/30"
               >
                 ✨ أنشئ حالة
               </button>
@@ -308,7 +308,7 @@ export function StatusesPage({ user }: { user: SafeUser }) {
                     </>
                   )}
                   <div className="absolute left-2 top-2 flex items-center gap-1.5 rounded-full bg-black/40 px-2 py-1 text-[10px] text-white backdrop-blur">
-                    <div className={`flex h-5 w-5 items-center justify-center rounded-full bg-gradient-to-br ${s.avatarColor || "from-violet-500 to-fuchsia-500"} text-[10px] font-bold`}>
+                    <div className={`flex h-5 w-5 items-center justify-center rounded-full bg-gradient-to-br ${s.avatarColor || "from-teal-500 to-cyan-500"} text-[10px] font-bold`}>
                       {s.firstName.charAt(0)}
                     </div>
                     <span>{s.firstName}</span>
@@ -334,7 +334,7 @@ export function StatusesPage({ user }: { user: SafeUser }) {
                     key={t}
                     onClick={() => { setCreateType(t); setError(null); }}
                     className={`rounded-2xl border-2 p-3 text-sm font-semibold ${
-                      createType === t ? "border-violet-500 bg-violet-500/10" : "border-white/10 bg-white/5"
+                      createType === t ? "border-teal-500 bg-teal-500/10" : "border-white/10 bg-white/5"
                     }`}
                   >
                     {t === "text" ? "📝 نص" : t === "image" ? "🖼️ صورة" : "🎬 فيديو"}
@@ -353,7 +353,7 @@ export function StatusesPage({ user }: { user: SafeUser }) {
                   type="button"
                   onClick={() => fileInputRef.current?.click()}
                   disabled={uploading}
-                  className="w-full rounded-2xl border-2 border-dashed border-white/20 bg-white/5 px-4 py-6 text-sm text-slate-300 hover:border-violet-500 hover:bg-violet-500/10"
+                  className="w-full rounded-2xl border-2 border-dashed border-white/20 bg-white/5 px-4 py-6 text-sm text-slate-300 hover:border-teal-500 hover:bg-teal-500/10"
                 >
                   {uploading ? "⏳ جاري الرفع..." : mediaUrl ? "🔄 اختر ملفاً آخر" : `📁 اضغط لرفع ${createType === "image" ? "صورة" : "فيديو"}`}
                 </button>
@@ -367,7 +367,7 @@ export function StatusesPage({ user }: { user: SafeUser }) {
                 onChange={(e) => setText(e.target.value)}
                 rows={3}
                 placeholder="اكتب النص الذي سيظهر فوق صورتك أو فيديوك..."
-                className="w-full resize-none rounded-2xl border border-white/10 bg-slate-800/50 p-3 text-slate-100 outline-none focus:border-violet-500"
+                className="w-full resize-none rounded-2xl border border-white/10 bg-slate-800/50 p-3 text-slate-100 outline-none focus:border-teal-500"
               />
             </div>
           </div>
@@ -397,7 +397,7 @@ export function StatusesPage({ user }: { user: SafeUser }) {
                     key={c.value}
                     onClick={() => setTextColor(c.value)}
                     className={`h-10 rounded-xl ring-2 ${
-                      textColor === c.value ? "ring-violet-500" : "ring-transparent"
+                      textColor === c.value ? "ring-teal-500" : "ring-transparent"
                     }`}
                     style={{ backgroundColor: c.value }}
                     title={c.name}
@@ -416,7 +416,7 @@ export function StatusesPage({ user }: { user: SafeUser }) {
                     key={p.value}
                     onClick={() => setPosition(p.value)}
                     className={`rounded-2xl p-3 text-sm ${
-                      position === p.value ? "bg-violet-500/20 ring-2 ring-violet-500" : "bg-white/5"
+                      position === p.value ? "bg-teal-500/20 ring-2 ring-teal-500" : "bg-white/5"
                     }`}
                   >
                     {p.icon} {p.name}
@@ -447,7 +447,7 @@ export function StatusesPage({ user }: { user: SafeUser }) {
                     key={f.value}
                     onClick={() => setFont(f.value)}
                     className={`rounded-xl p-2 text-sm ${
-                      font === f.value ? "bg-violet-500/20 ring-2 ring-violet-500" : "bg-white/5"
+                      font === f.value ? "bg-teal-500/20 ring-2 ring-teal-500" : "bg-white/5"
                     }`}
                     style={{ fontFamily: f.value }}
                   >
@@ -460,7 +460,7 @@ export function StatusesPage({ user }: { user: SafeUser }) {
             <button
               onClick={publish}
               disabled={publishing || uploading}
-              className="w-full rounded-2xl bg-gradient-to-l from-violet-600 to-fuchsia-600 py-3 text-sm font-semibold text-white shadow-lg shadow-violet-500/30 disabled:opacity-50"
+              className="w-full rounded-2xl bg-gradient-to-l from-teal-600 to-cyan-600 py-3 text-sm font-semibold text-white shadow-lg shadow-teal-500/30 disabled:opacity-50"
             >
               {publishing ? "⏳ جاري النشر..." : "✨ نشر الحالة"}
             </button>
@@ -555,7 +555,7 @@ export function StatusesPage({ user }: { user: SafeUser }) {
 
           {/* User info */}
           <div className="absolute left-4 top-6 z-10 flex items-center gap-2 text-white">
-            <div className={`flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br ${viewing.avatarColor || "from-violet-500 to-fuchsia-500"} text-sm font-bold`}>
+            <div className={`flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br ${viewing.avatarColor || "from-teal-500 to-cyan-500"} text-sm font-bold`}>
               {viewing.firstName.charAt(0)}
             </div>
             <p className="text-sm font-semibold">{viewing.firstName} {viewing.lastName}</p>
