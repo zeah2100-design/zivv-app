@@ -45,10 +45,10 @@ type SmartPost = {
 };
 
 const TYPE_STYLES: Record<Insight["type"], { bg: string; border: string; icon: string }> = {
-  suggestion: { bg: "from-violet-500/10 to-fuchsia-500/5", border: "border-violet-500/20", icon: "💡" },
+  suggestion: { bg: "from-teal-500/10 to-cyan-500/5", border: "border-teal-500/20", icon: "💡" },
   opportunity: { bg: "from-amber-500/10 to-orange-500/5", border: "border-amber-500/20", icon: "🎯" },
   achievement: { bg: "from-emerald-500/10 to-teal-500/5", border: "border-emerald-500/20", icon: "🏆" },
-  warning: { bg: "from-rose-500/10 to-pink-500/5", border: "border-rose-500/20", icon: "⚠️" },
+  warning: { bg: "from-rose-500/10 to-indigo-500/5", border: "border-rose-500/20", icon: "⚠️" },
   info: { bg: "from-sky-500/10 to-cyan-500/5", border: "border-sky-500/20", icon: "ℹ️" },
 };
 
@@ -128,16 +128,16 @@ export function SmartPage({ user }: { user: SafeUser }) {
   return (
     <div className="space-y-6">
       {/* Hero */}
-      <div className="relative overflow-hidden rounded-3xl border border-violet-500/20 bg-gradient-to-br from-violet-600/20 via-fuchsia-600/10 to-pink-600/20 p-6 sm:p-8">
-        <div className="pointer-events-none absolute -right-10 -top-10 h-40 w-40 rounded-full bg-violet-500/20 blur-3xl" />
-        <div className="pointer-events-none absolute -bottom-10 -left-10 h-40 w-40 rounded-full bg-fuchsia-500/20 blur-3xl" />
+      <div className="relative overflow-hidden rounded-3xl border border-teal-500/20 bg-gradient-to-br from-teal-600/20 via-cyan-600/10 to-indigo-600/20 p-6 sm:p-8">
+        <div className="pointer-events-none absolute -right-10 -top-10 h-40 w-40 rounded-full bg-teal-500/20 blur-3xl" />
+        <div className="pointer-events-none absolute -bottom-10 -left-10 h-40 w-40 rounded-full bg-cyan-500/20 blur-3xl" />
         <div className="relative flex items-start gap-4">
-          <div className="grid h-14 w-14 shrink-0 place-items-center rounded-2xl bg-gradient-to-br from-violet-500 to-fuchsia-500 text-2xl shadow-xl shadow-violet-500/40">
+          <div className="grid h-14 w-14 shrink-0 place-items-center rounded-2xl bg-gradient-to-br from-teal-500 to-cyan-500 text-2xl shadow-xl shadow-teal-500/40">
             🧠
           </div>
           <div className="flex-1">
             <h1 className="text-2xl font-bold text-white sm:text-3xl">
-              مرحباً بك في <span className="bg-gradient-to-l from-violet-400 to-fuchsia-400 bg-clip-text text-transparent">الحل الذكي</span>
+              مرحباً بك في <span className="bg-gradient-to-l from-teal-400 to-cyan-400 bg-clip-text text-transparent">الحل الذكي</span>
             </h1>
             <p className="mt-1 text-sm text-slate-300 sm:text-base">
               رؤى ذكية مخصصة لك · توصيات أصدقاء · محتوى مختار بناءً على اهتماماتك
@@ -220,7 +220,7 @@ export function SmartPage({ user }: { user: SafeUser }) {
                   <div key={r.userId} className="flex items-center gap-3 rounded-2xl border border-white/5 bg-white/[0.02] p-3">
                     <Link href={`/profile/${r.userId}`} className="flex items-center gap-3">
                       <div
-                        className={`flex h-11 w-11 items-center justify-center rounded-full bg-gradient-to-br ${r.avatarColor || "from-violet-500 to-fuchsia-500"} text-sm font-bold text-white`}
+                        className={`flex h-11 w-11 items-center justify-center rounded-full bg-gradient-to-br ${r.avatarColor || "from-teal-500 to-cyan-500"} text-sm font-bold text-white`}
                       >
                         {r.firstName.charAt(0)}
                       </div>
@@ -233,7 +233,7 @@ export function SmartPage({ user }: { user: SafeUser }) {
                     </Link>
                     <button
                       onClick={() => followRec(r.userId)}
-                      className="ms-auto rounded-xl bg-violet-500/20 px-3 py-1.5 text-xs font-semibold text-violet-200 hover:bg-violet-500/30"
+                      className="ms-auto rounded-xl bg-teal-500/20 px-3 py-1.5 text-xs font-semibold text-teal-200 hover:bg-teal-500/30"
                     >
                       + متابعة
                     </button>
@@ -245,7 +245,7 @@ export function SmartPage({ user }: { user: SafeUser }) {
         </div>
       ) : tab === "feed" ? (
         <div className="space-y-4">
-          <div className="rounded-3xl border border-violet-500/20 bg-violet-500/5 p-4 text-sm text-violet-200">
+          <div className="rounded-3xl border border-teal-500/20 bg-teal-500/5 p-4 text-sm text-teal-200">
             ✨ هذه التغذية مخصصة لك بناءً على اهتماماتك ونشاط أصدقائك وتفاعلاتك السابقة
           </div>
           {feed.length === 0 ? (
@@ -257,7 +257,7 @@ export function SmartPage({ user }: { user: SafeUser }) {
               <article key={p.id} className="overflow-hidden rounded-3xl border border-white/5 bg-slate-900/60 p-5">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-3">
-                    <div className={`flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br ${p.authorColor || "from-violet-500 to-fuchsia-500"} text-sm font-bold text-white`}>
+                    <div className={`flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br ${p.authorColor || "from-teal-500 to-cyan-500"} text-sm font-bold text-white`}>
                       {p.authorFirst?.charAt(0) || "?"}
                     </div>
                     <div>
@@ -268,7 +268,7 @@ export function SmartPage({ user }: { user: SafeUser }) {
                     </div>
                   </div>
                   {p.reason && (
-                    <span className="rounded-full bg-violet-500/15 px-2.5 py-1 text-[10px] text-violet-200">
+                    <span className="rounded-full bg-teal-500/15 px-2.5 py-1 text-[10px] text-teal-200">
                       {p.reason}
                     </span>
                   )}
@@ -277,7 +277,7 @@ export function SmartPage({ user }: { user: SafeUser }) {
                 {p.tags && p.tags.length > 0 && (
                   <div className="mt-2 flex flex-wrap gap-1">
                     {p.tags.map((t) => (
-                      <span key={t} className="rounded-full bg-violet-500/10 px-2 py-0.5 text-[10px] text-violet-300">#{t}</span>
+                      <span key={t} className="rounded-full bg-teal-500/10 px-2 py-0.5 text-[10px] text-teal-300">#{t}</span>
                     ))}
                   </div>
                 )}
@@ -303,12 +303,12 @@ export function SmartPage({ user }: { user: SafeUser }) {
                 value={captionTopic}
                 onChange={(e) => setCaptionTopic(e.target.value)}
                 placeholder="مثال: غروب الشمس، قهوة الصباح، سفر..."
-                className="flex-1 rounded-2xl border border-white/10 bg-slate-800/50 px-4 py-2.5 text-slate-100 outline-none focus:border-violet-500"
+                className="flex-1 rounded-2xl border border-white/10 bg-slate-800/50 px-4 py-2.5 text-slate-100 outline-none focus:border-teal-500"
               />
               <button
                 onClick={generateCaptions}
                 disabled={!captionTopic.trim() || captionBusy}
-                className="rounded-2xl bg-gradient-to-l from-violet-600 to-fuchsia-600 px-5 py-2.5 text-sm font-semibold text-white disabled:opacity-50"
+                className="rounded-2xl bg-gradient-to-l from-teal-600 to-cyan-600 px-5 py-2.5 text-sm font-semibold text-white disabled:opacity-50"
               >
                 {captionBusy ? "⏳ جاري التحضير..." : "✨ توليد"}
               </button>
@@ -341,12 +341,12 @@ export function SmartPage({ user }: { user: SafeUser }) {
               onChange={(e) => setTagInput(e.target.value)}
               rows={3}
               placeholder="ألصق نص منشورك هنا..."
-              className="w-full resize-none rounded-2xl border border-white/10 bg-slate-800/50 p-3 text-slate-100 outline-none focus:border-violet-500"
+              className="w-full resize-none rounded-2xl border border-white/10 bg-slate-800/50 p-3 text-slate-100 outline-none focus:border-teal-500"
             />
             <button
               onClick={generateTags}
               disabled={!tagInput.trim() || tagBusy}
-              className="mt-2 w-full rounded-2xl bg-gradient-to-l from-violet-600 to-fuchsia-600 py-2.5 text-sm font-semibold text-white disabled:opacity-50"
+              className="mt-2 w-full rounded-2xl bg-gradient-to-l from-teal-600 to-cyan-600 py-2.5 text-sm font-semibold text-white disabled:opacity-50"
             >
               {tagBusy ? "⏳ جاري التحضير..." : "✨ استخراج الوسوم"}
             </button>
@@ -356,7 +356,7 @@ export function SmartPage({ user }: { user: SafeUser }) {
                   <span
                     key={i}
                     onClick={() => navigator.clipboard?.writeText("#" + t)}
-                    className="cursor-pointer rounded-full bg-violet-500/20 px-3 py-1.5 text-xs text-violet-200 hover:bg-violet-500/30"
+                    className="cursor-pointer rounded-full bg-teal-500/20 px-3 py-1.5 text-xs text-teal-200 hover:bg-teal-500/30"
                   >
                     #{t}
                   </span>
@@ -375,7 +375,7 @@ function TabBtn({ children, active, onClick }: { children: React.ReactNode; acti
     <button
       onClick={onClick}
       className={`flex-1 rounded-xl py-2 font-semibold transition ${
-        active ? "bg-gradient-to-l from-violet-600 to-fuchsia-600 text-white" : "text-slate-300"
+        active ? "bg-gradient-to-l from-teal-600 to-cyan-600 text-white" : "text-slate-300"
       }`}
     >
       {children}
