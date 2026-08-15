@@ -67,12 +67,12 @@ export function SearchPage() {
               if (!aiMode) normalSearch(e.target.value);
             }}
             placeholder={aiMode ? "اسأل الذكاء الاصطناعي أي شيء..." : "ابحث عن أشخاص بالاسم..."}
-            className="flex-1 rounded-2xl border border-white/10 bg-slate-800/50 px-4 py-3 text-slate-100 outline-none focus:border-violet-500"
+            className="flex-1 rounded-2xl border border-white/10 bg-slate-800/50 px-4 py-3 text-slate-100 outline-none focus:border-teal-500"
           />
           <button
             type="submit"
             disabled={busy}
-            className="rounded-2xl bg-gradient-to-l from-violet-600 to-fuchsia-600 px-5 py-3 text-sm font-semibold text-white hover:from-violet-500 hover:to-fuchsia-500 disabled:opacity-60"
+            className="rounded-2xl bg-gradient-to-l from-teal-600 to-cyan-600 px-5 py-3 text-sm font-semibold text-white hover:from-teal-500 hover:to-cyan-500 disabled:opacity-60"
           >
             {busy ? "..." : "بحث"}
           </button>
@@ -81,14 +81,14 @@ export function SearchPage() {
           <button
             type="button"
             onClick={() => { setAiMode(false); setAiResult(null); normalSearch(query); }}
-            className={`rounded-full px-3 py-1 text-xs ${!aiMode ? "bg-violet-500/30 text-violet-200" : "bg-white/5 text-slate-300"}`}
+            className={`rounded-full px-3 py-1 text-xs ${!aiMode ? "bg-teal-500/30 text-teal-200" : "bg-white/5 text-slate-300"}`}
           >
             🔍 بحث عادي
           </button>
           <button
             type="button"
             onClick={() => { setAiMode(true); setUsers([]); }}
-            className={`rounded-full px-3 py-1 text-xs ${aiMode ? "bg-fuchsia-500/30 text-fuchsia-200" : "bg-white/5 text-slate-300"}`}
+            className={`rounded-full px-3 py-1 text-xs ${aiMode ? "bg-cyan-500/30 text-cyan-200" : "bg-white/5 text-slate-300"}`}
           >
             ✨ بحث ذكي
           </button>
@@ -96,7 +96,7 @@ export function SearchPage() {
       </form>
 
       {aiMode ? (
-        <div className="rounded-3xl border border-fuchsia-500/20 bg-gradient-to-br from-fuchsia-500/5 to-violet-500/5 p-6">
+        <div className="rounded-3xl border border-cyan-500/20 bg-gradient-to-br from-cyan-500/5 to-teal-500/5 p-6">
           <h2 className="flex items-center gap-2 text-lg font-semibold text-white">
             ✨ نتائج البحث الذكي
           </h2>
@@ -137,7 +137,7 @@ export function SearchPage() {
               >
                 <div
                   className={`flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br ${
-                    u.avatarColor || "from-violet-500 to-fuchsia-500"
+                    u.avatarColor || "from-teal-500 to-cyan-500"
                   } text-base font-bold text-white`}
                 >
                   {u.firstName.charAt(0)}
