@@ -94,7 +94,7 @@ export function AIStudioPage() {
     <div className="space-y-6">
       <header>
         <h1 className="text-3xl font-bold text-white">
-          ✨ <span className="bg-gradient-to-l from-violet-400 to-fuchsia-400 bg-clip-text text-transparent">zivv.AI Studio</span>
+          ✨ <span className="bg-gradient-to-l from-teal-400 to-cyan-400 bg-clip-text text-transparent">zivv.AI Studio</span>
         </h1>
         <p className="mt-1 text-sm text-slate-400">
           دردشة ذكية + إنشاء صور بالذكاء الاصطناعي
@@ -105,7 +105,7 @@ export function AIStudioPage() {
         <button
           onClick={() => setTab("chat")}
           className={`flex-1 rounded-xl py-2 font-semibold transition ${
-            tab === "chat" ? "bg-gradient-to-l from-violet-600 to-fuchsia-600 text-white" : "text-slate-300"
+            tab === "chat" ? "bg-gradient-to-l from-teal-600 to-cyan-600 text-white" : "text-slate-300"
           }`}
         >
           💬 دردشة ذكية
@@ -113,7 +113,7 @@ export function AIStudioPage() {
         <button
           onClick={() => setTab("create")}
           className={`flex-1 rounded-xl py-2 font-semibold transition ${
-            tab === "create" ? "bg-gradient-to-l from-violet-600 to-fuchsia-600 text-white" : "text-slate-300"
+            tab === "create" ? "bg-gradient-to-l from-teal-600 to-cyan-600 text-white" : "text-slate-300"
           }`}
         >
           🎨 إنشاء صورة
@@ -134,7 +134,7 @@ export function AIStudioPage() {
                 <div
                   className={`max-w-[80%] rounded-2xl px-4 py-2.5 text-sm leading-relaxed ${
                     m.role === "user"
-                      ? "bg-gradient-to-l from-violet-600 to-fuchsia-600 text-white"
+                      ? "bg-gradient-to-l from-teal-600 to-cyan-600 text-white"
                       : "bg-white/5 text-slate-100"
                   }`}
                 >
@@ -159,12 +159,12 @@ export function AIStudioPage() {
               value={chatInput}
               onChange={(e) => setChatInput(e.target.value)}
               placeholder="اسأل zivv.AI أي شيء..."
-              className="flex-1 rounded-2xl border border-white/10 bg-slate-800/50 px-4 py-2.5 text-slate-100 outline-none focus:border-violet-500"
+              className="flex-1 rounded-2xl border border-white/10 bg-slate-800/50 px-4 py-2.5 text-slate-100 outline-none focus:border-teal-500"
             />
             <button
               type="submit"
               disabled={chatBusy || !chatInput.trim()}
-              className="rounded-2xl bg-gradient-to-l from-violet-600 to-fuchsia-600 px-5 py-2.5 text-sm font-semibold text-white disabled:opacity-50"
+              className="rounded-2xl bg-gradient-to-l from-teal-600 to-cyan-600 px-5 py-2.5 text-sm font-semibold text-white disabled:opacity-50"
             >
               إرسال
             </button>
@@ -184,7 +184,7 @@ export function AIStudioPage() {
                 onChange={(e) => setPrompt(e.target.value)}
                 rows={3}
                 placeholder="مثال: منظر طبيعي لغروب الشمس فوق محيط هادئ"
-                className="w-full resize-none rounded-2xl border border-white/10 bg-slate-800/50 p-3 text-slate-100 outline-none focus:border-violet-500"
+                className="w-full resize-none rounded-2xl border border-white/10 bg-slate-800/50 p-3 text-slate-100 outline-none focus:border-teal-500"
               />
               <div className="mt-2 flex flex-wrap gap-1.5">
                 {ART_PRESETS.map((p) => (
@@ -203,7 +203,7 @@ export function AIStudioPage() {
             <button
               onClick={generate}
               disabled={!prompt.trim() || generating}
-              className="w-full rounded-2xl bg-gradient-to-l from-violet-600 to-fuchsia-600 py-3 text-sm font-semibold text-white shadow-lg shadow-violet-500/30 disabled:opacity-50"
+              className="w-full rounded-2xl bg-gradient-to-l from-teal-600 to-cyan-600 py-3 text-sm font-semibold text-white shadow-lg shadow-teal-500/30 disabled:opacity-50"
             >
               {generating ? `⏳ جاري التحضير... (${IMAGE_MODELS[selectedModel].estimatedTime})` : "✨ إنشاء الصورة"}
             </button>
@@ -219,7 +219,7 @@ export function AIStudioPage() {
                 </div>
                 <div className="flex items-center justify-between text-xs text-slate-400">
                   <span>📝 "{generated.prompt}"</span>
-                  <span className="rounded-full bg-violet-500/20 px-2 py-0.5 text-violet-200">
+                  <span className="rounded-full bg-teal-500/20 px-2 py-0.5 text-teal-200">
                     {IMAGE_MODELS[generated.model].emoji} {IMAGE_MODELS[generated.model].name}
                   </span>
                 </div>
@@ -236,7 +236,7 @@ export function AIStudioPage() {
               <div className="grid aspect-square place-items-center rounded-2xl border border-dashed border-white/10 bg-white/5 text-sm text-slate-500">
                 {generating ? (
                   <div className="text-center">
-                    <div className="mx-auto mb-3 h-12 w-12 animate-spin rounded-full border-4 border-violet-500/30 border-t-violet-500" />
+                    <div className="mx-auto mb-3 h-12 w-12 animate-spin rounded-full border-4 border-teal-500/30 border-t-teal-500" />
                     <p>⏳ جاري التحضير...</p>
                   </div>
                 ) : (
@@ -265,11 +265,11 @@ function ModelSelector({ selected, onChange }: { selected: ImageModel; onChange:
               type="button"
               onClick={() => onChange(m)}
               className={`relative rounded-2xl border-2 p-2.5 text-right transition ${
-                isActive ? "border-violet-500 bg-violet-500/10" : "border-white/10 bg-white/5 hover:border-white/30"
+                isActive ? "border-teal-500 bg-teal-500/10" : "border-white/10 bg-white/5 hover:border-white/30"
               }`}
             >
               {isActive && (
-                <span className="absolute end-2 top-2 grid h-4 w-4 place-items-center rounded-full bg-violet-500 text-[9px] text-white">✓</span>
+                <span className="absolute end-2 top-2 grid h-4 w-4 place-items-center rounded-full bg-teal-500 text-[9px] text-white">✓</span>
               )}
               <div className="text-xl">{model.emoji}</div>
               <div className="mt-1 text-xs font-semibold text-white">{model.name}</div>
