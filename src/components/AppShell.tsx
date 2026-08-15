@@ -57,18 +57,25 @@ export function AppShell({
   return (
     <div className="flex min-h-screen flex-col bg-slate-950 text-slate-100 lg:flex-row">
       {/* Sidebar - Desktop */}
-      <aside className="sticky top-0 z-30 hidden h-screen w-68 shrink-0 flex-col border-l border-white/5 bg-slate-950/95 backdrop-blur-xl lg:flex" style={{ width: "17rem" }}>
+      <aside
+        className="sticky top-0 z-30 hidden h-screen shrink-0 flex-col border-l border-white/5 bg-[#0B0F16]/95 backdrop-blur-xl lg:flex"
+        style={{ width: "17rem" }}
+      >
         <Link href="/feed" className="flex items-center gap-3 px-5 py-6">
           <Logo size={42} />
           <div>
-            <h1 className="text-2xl font-black tracking-tight text-white">zivv</h1>
-            <p className="text-[10px] font-medium text-slate-400">تواصل · إبداع · أمان</p>
+            <h1 className="text-2xl font-black tracking-tight text-white">
+              zivv
+            </h1>
+            <p className="text-[10px] font-medium text-slate-500">
+              تواصل · إبداع · أمان
+            </p>
           </div>
         </Link>
 
         <Link
           href="/post"
-          className="mx-4 mb-4 flex items-center justify-center gap-2 rounded-2xl bg-gradient-to-l from-teal-600 to-cyan-600 px-4 py-3 text-sm font-bold text-white shadow-lg shadow-teal-500/30 transition hover:shadow-xl hover:shadow-teal-500/40 gradient-animated"
+          className="mx-4 mb-4 flex items-center justify-center gap-2 rounded-xl bg-gradient-to-l from-teal-500 to-cyan-500 px-4 py-3 text-sm font-bold text-slate-950 shadow-lg shadow-teal-500/20 transition hover:shadow-xl hover:shadow-teal-500/30 gradient-animated"
         >
           <svg className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
             <path d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" />
@@ -83,9 +90,9 @@ export function AppShell({
               <Link
                 key={item.href}
                 href={item.href}
-                className={`group relative flex items-center gap-3 rounded-2xl px-3 py-2.5 text-sm font-semibold transition ${
+                className={`group relative flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-semibold transition ${
                   active
-                    ? "bg-gradient-to-l from-teal-500/20 to-cyan-500/10 text-white"
+                    ? "bg-teal-500/10 text-teal-300"
                     : "text-slate-400 hover:bg-white/5 hover:text-white"
                 }`}
               >
@@ -98,7 +105,7 @@ export function AppShell({
             );
           })}
 
-          <p className="mt-5 px-3 text-[10px] font-bold uppercase tracking-wider text-slate-500">
+          <p className="mt-5 px-3 text-[10px] font-bold uppercase tracking-wider text-slate-600">
             المزيد
           </p>
           {SECONDARY_NAV.map((item) => {
@@ -107,9 +114,9 @@ export function AppShell({
               <Link
                 key={item.href}
                 href={item.href}
-                className={`flex items-center gap-3 rounded-2xl px-3 py-2.5 text-sm font-medium transition ${
+                className={`flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium transition ${
                   active
-                    ? "bg-gradient-to-l from-teal-500/20 to-cyan-500/10 text-white"
+                    ? "bg-teal-500/10 text-teal-300"
                     : "text-slate-400 hover:bg-white/5 hover:text-white"
                 }`}
               >
@@ -123,31 +130,40 @@ export function AppShell({
         <div className="mt-2 space-y-1 border-t border-white/5 p-3">
           <Link
             href={`/profile/${user.id}`}
-            className="flex items-center gap-3 rounded-2xl bg-white/[0.03] p-2.5 transition hover:bg-white/5"
+            className="flex items-center gap-3 rounded-xl bg-white/[0.03] p-2.5 transition hover:bg-white/5"
           >
-            <div className={`flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br ${user.avatarColor || "from-teal-500 to-cyan-500"} text-sm font-bold text-white ring-2 ring-slate-900`}>
+            <div
+              className={`flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br ${
+                user.avatarColor || "from-teal-500 to-cyan-500"
+              } text-sm font-bold text-white ring-2 ring-slate-900`}
+            >
               {user.firstName.charAt(0)}
             </div>
             <div className="min-w-0 flex-1">
               <p className="truncate text-sm font-semibold text-white">
                 {user.firstName} {user.lastName}
               </p>
-              <p className="truncate text-[10px] text-slate-400">عرض الملف الشخصي</p>
+              <p className="truncate text-[10px] text-slate-500">
+                عرض الملف الشخصي
+              </p>
             </div>
             {user.showOnline && (
-              <span className="h-2 w-2 shrink-0 rounded-full bg-emerald-400 ring-2 ring-slate-900" title="متصل" />
+              <span
+                className="h-2 w-2 shrink-0 rounded-full bg-emerald-400 ring-2 ring-slate-900"
+                title="متصل"
+              />
             )}
           </Link>
           <Link
             href="/settings"
-            className="flex items-center gap-3 rounded-2xl px-3 py-2 text-sm text-slate-400 transition hover:bg-white/5 hover:text-white"
+            className="flex items-center gap-3 rounded-xl px-3 py-2 text-sm text-slate-400 transition hover:bg-white/5 hover:text-white"
           >
             <span className="text-base">⚙️</span>
             <span>الإعدادات</span>
           </Link>
           <button
             onClick={() => setShowLogout(true)}
-            className="flex w-full items-center gap-3 rounded-2xl px-3 py-2 text-sm text-slate-400 transition hover:bg-rose-500/10 hover:text-rose-300"
+            className="flex w-full items-center gap-3 rounded-xl px-3 py-2 text-sm text-slate-400 transition hover:bg-rose-500/10 hover:text-rose-300"
           >
             <span className="text-base">🚪</span>
             <span>تسجيل الخروج</span>
@@ -156,7 +172,7 @@ export function AppShell({
       </aside>
 
       {/* Mobile top bar */}
-      <div className="sticky top-0 z-30 flex items-center justify-between border-b border-white/5 bg-slate-950/95 px-4 py-3 backdrop-blur-xl lg:hidden">
+      <div className="sticky top-0 z-30 flex items-center justify-between border-b border-white/5 bg-[#0B0F16]/95 px-4 py-3 backdrop-blur-xl lg:hidden">
         <Link href="/feed" className="flex items-center gap-2">
           <Logo size={32} />
           <span className="text-xl font-black text-white">zivv</span>
@@ -165,7 +181,7 @@ export function AppShell({
           <NotificationBell />
           <Link
             href="/post"
-            className="grid h-9 w-9 place-items-center rounded-full bg-gradient-to-br from-teal-500 to-cyan-500 text-white shadow-lg shadow-teal-500/30"
+            className="grid h-9 w-9 place-items-center rounded-full bg-gradient-to-br from-teal-500 to-cyan-500 text-slate-950 shadow-lg shadow-teal-500/30"
             aria-label="نشر"
           >
             <svg className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
@@ -181,7 +197,9 @@ export function AppShell({
           </Link>
           <Link
             href={`/profile/${user.id}`}
-            className={`flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br ${user.avatarColor || "from-teal-500 to-cyan-500"} text-sm font-bold text-white ring-2 ring-slate-900`}
+            className={`flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br ${
+              user.avatarColor || "from-teal-500 to-cyan-500"
+            } text-sm font-bold text-white ring-2 ring-slate-900`}
             aria-label="الملف الشخصي"
           >
             {user.firstName.charAt(0)}
@@ -197,7 +215,7 @@ export function AppShell({
       </div>
 
       {/* Bottom nav (mobile) */}
-      <nav className="sticky bottom-0 z-30 grid grid-cols-5 gap-1 border-t border-white/5 bg-slate-950/95 px-2 py-2 backdrop-blur-xl lg:hidden">
+      <nav className="sticky bottom-0 z-30 grid grid-cols-5 gap-1 border-t border-white/5 bg-[#0B0F16]/95 px-2 py-2 backdrop-blur-xl lg:hidden">
         {PRIMARY_NAV.map((item) => {
           const active = isActive(item.href);
           return (
@@ -206,8 +224,8 @@ export function AppShell({
               href={item.href}
               className={`flex flex-col items-center justify-center rounded-xl py-1.5 text-[10px] transition ${
                 active
-                  ? "bg-gradient-to-b from-teal-500/20 to-cyan-500/20 text-teal-200"
-                  : "text-slate-400"
+                  ? "bg-teal-500/15 text-teal-300"
+                  : "text-slate-500"
               }`}
             >
               <span className="text-lg leading-none">{item.icon}</span>
@@ -220,24 +238,32 @@ export function AppShell({
       {/* Mobile FAB (more) */}
       <button
         onClick={() => setShowMore(true)}
-        className="fixed bottom-20 left-4 z-20 grid h-12 w-12 place-items-center rounded-full bg-gradient-to-br from-teal-600 to-cyan-600 text-xl text-white shadow-xl shadow-teal-500/40 lg:hidden"
+        className="fixed bottom-20 left-4 z-20 grid h-12 w-12 place-items-center rounded-full bg-gradient-to-br from-teal-500 to-cyan-500 text-xl text-slate-950 shadow-xl shadow-teal-500/30 lg:hidden"
         aria-label="المزيد"
       >
         ☰
       </button>
 
       {showMore && (
-        <div onClick={() => setShowMore(false)} className="fixed inset-0 z-40 bg-black/60 backdrop-blur-sm lg:hidden">
-          <div onClick={(e) => e.stopPropagation()} className="absolute bottom-0 left-0 right-0 rounded-t-3xl border-t border-white/10 bg-slate-900 p-4 fade-in">
+        <div
+          onClick={() => setShowMore(false)}
+          className="fixed inset-0 z-40 bg-black/60 backdrop-blur-sm lg:hidden"
+        >
+          <div
+            onClick={(e) => e.stopPropagation()}
+            className="absolute bottom-0 left-0 right-0 rounded-t-3xl border-t border-white/10 bg-slate-900 p-4 fade-in"
+          >
             <div className="mx-auto mb-3 h-1.5 w-12 rounded-full bg-white/20" />
-            <h3 className="mb-3 px-2 text-sm font-semibold text-slate-300">المزيد</h3>
+            <h3 className="mb-3 px-2 text-sm font-semibold text-slate-300">
+              المزيد
+            </h3>
             <div className="grid grid-cols-2 gap-2">
               {SECONDARY_NAV.map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}
                   onClick={() => setShowMore(false)}
-                  className="flex items-center gap-3 rounded-2xl border border-white/5 bg-white/5 p-3 text-sm text-slate-200 hover:bg-white/10"
+                  className="flex items-center gap-3 rounded-xl border border-white/5 bg-white/5 p-3 text-sm text-slate-200 hover:bg-white/10"
                 >
                   <span className="text-lg">{item.icon}</span>
                   <span>{item.label}</span>
