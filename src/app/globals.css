@@ -1,81 +1,102 @@
 @import "tailwindcss";
 
-:root {
+@theme {
+  --color-primary: #2DD4BF;
+  --color-primary-light: #5EEAD4;
+  --color-primary-dark: #0E9488;
+  --color-accent: #8B5CF6;
+  --color-accent-light: #A78BFA;
+  --color-danger: #FF6B6B;
+  --color-warning: #FBBF24;
+  --color-dark-bg: #0B0F16;
+  --color-dark-card: #131A24;
+  --color-dark-border: #1F2937;
+  --color-dark-text: #E5EDF5;
+  --color-dark-muted: #8CA0B4;
+  --color-dark-raised: #182130;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-primary-dark) var(--color-dark-bg);
+}
+
+html {
   color-scheme: dark;
 }
 
-html, body {
-  background: #020617;
-  color: #e2e8f0;
-  font-feature-settings: "ss01", "cv11";
+body {
+  background-color: var(--color-dark-bg);
+  color: var(--color-dark-text);
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  -webkit-tap-highlight-color: transparent;
 }
 
-/* Custom scrollbar */
-* {
-  scrollbar-width: thin;
-  scrollbar-color: rgba(139, 92, 246, 0.3) transparent;
-}
-*::-webkit-scrollbar { width: 8px; height: 8px; }
-*::-webkit-scrollbar-track { background: transparent; }
-*::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, rgba(139, 92, 246, 0.4), rgba(236, 72, 153, 0.4));
-  border-radius: 4px;
-}
-*::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, rgba(139, 92, 246, 0.6), rgba(236, 72, 153, 0.6));
+::selection {
+  background: rgba(45, 212, 191, 0.3);
+  color: #fff;
 }
 
-/* Smooth scroll */
-html { scroll-behavior: smooth; }
-
-/* Glassmorphism utility */
-.glass {
-  background: rgba(15, 23, 42, 0.6);
-  backdrop-filter: blur(20px) saturate(180%);
-  -webkit-backdrop-filter: blur(20px) saturate(180%);
+/* ── بطاقات و عناصر احترافية ── */
+.zv-card {
+  background: var(--color-dark-card);
+  border: 1px solid var(--color-dark-border);
+  border-radius: 1rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 8px 24px rgba(0, 0, 0, 0.18);
 }
 
-/* Animated gradient border */
-@keyframes gradient-shift {
-  0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
+.zv-hover {
+  transition: transform 0.15s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+.zv-hover:hover {
+  transform: translateY(-1px);
+  border-color: rgba(45, 212, 191, 0.35);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(45, 212, 191, 0.15);
 }
 
-.gradient-animated {
-  background-size: 200% 200%;
-  animation: gradient-shift 8s ease infinite;
+.text-gradient-brand {
+  background: linear-gradient(135deg, #2DD4BF, #38BDF8, #8B5CF6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
-/* Fade in */
-@keyframes fade-in {
-  from { opacity: 0; transform: translateY(8px); }
+/* ── حركات ── */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
 }
-.fade-in { animation: fade-in 0.4s ease-out; }
 
-/* Pulse glow */
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(100%); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 @keyframes pulse-glow {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(139, 92, 246, 0.4); }
-  50% { box-shadow: 0 0 0 12px rgba(139, 92, 246, 0); }
+  0%, 100% { box-shadow: 0 0 5px var(--color-primary); }
+  50% { box-shadow: 0 0 20px var(--color-primary), 0 0 40px var(--color-primary-light); }
 }
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.fade-in { animation: fadeIn 0.3s ease both; }
+.slide-up { animation: slideUp 0.3s ease both; }
 .pulse-glow { animation: pulse-glow 2s ease-in-out infinite; }
+.gradient-animated {
+  background-size: 200% 200%;
+  animation: gradient-shift 6s ease infinite;
+}
 
-/* Typing dots */
-@keyframes typing {
-  0%, 60%, 100% { transform: translateY(0); opacity: 0.4; }
-  30% { transform: translateY(-6px); opacity: 1; }
+/* ── شريط تمرير أنيق ── */
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: var(--color-dark-border);
+  border-radius: 10px;
 }
-.typing-dot {
-  animation: typing 1.4s ease-in-out infinite;
-}
-.typing-dot:nth-child(2) { animation-delay: 0.2s; }
-.typing-dot:nth-child(3) { animation-delay: 0.4s; }
-
-/* Subtle floating */
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-6px); }
-}
-.float { animation: float 4s ease-in-out infinite; }
+::-webkit-scrollbar-thumb:hover { background: var(--color-primary-dark); }
