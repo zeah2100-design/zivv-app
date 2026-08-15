@@ -52,7 +52,7 @@ export function ConfirmDialog({
             className={`flex-1 rounded-2xl px-4 py-2.5 text-sm font-semibold text-white ${
               variant === "danger"
                 ? "bg-gradient-to-l from-rose-600 to-red-600 hover:from-rose-500 hover:to-red-500"
-                : "bg-gradient-to-l from-violet-600 to-fuchsia-600 hover:from-violet-500 hover:to-fuchsia-500"
+                : "bg-gradient-to-l from-teal-600 to-cyan-600 hover:from-teal-500 hover:to-cyan-500"
             }`}
           >
             {confirmLabel}
