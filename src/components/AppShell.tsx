@@ -68,7 +68,7 @@ export function AppShell({
 
         <Link
           href="/post"
-          className="mx-4 mb-4 flex items-center justify-center gap-2 rounded-2xl bg-gradient-to-l from-violet-600 to-fuchsia-600 px-4 py-3 text-sm font-bold text-white shadow-lg shadow-violet-500/30 transition hover:shadow-xl hover:shadow-violet-500/40 gradient-animated"
+          className="mx-4 mb-4 flex items-center justify-center gap-2 rounded-2xl bg-gradient-to-l from-teal-600 to-cyan-600 px-4 py-3 text-sm font-bold text-white shadow-lg shadow-teal-500/30 transition hover:shadow-xl hover:shadow-teal-500/40 gradient-animated"
         >
           <svg className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
             <path d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" />
@@ -85,12 +85,12 @@ export function AppShell({
                 href={item.href}
                 className={`group relative flex items-center gap-3 rounded-2xl px-3 py-2.5 text-sm font-semibold transition ${
                   active
-                    ? "bg-gradient-to-l from-violet-500/20 to-fuchsia-500/10 text-white"
+                    ? "bg-gradient-to-l from-teal-500/20 to-cyan-500/10 text-white"
                     : "text-slate-400 hover:bg-white/5 hover:text-white"
                 }`}
               >
                 {active && (
-                  <span className="absolute right-0 top-1/2 h-6 w-1 -translate-y-1/2 rounded-l-full bg-gradient-to-b from-violet-400 to-fuchsia-400" />
+                  <span className="absolute right-0 top-1/2 h-6 w-1 -translate-y-1/2 rounded-l-full bg-gradient-to-b from-teal-400 to-cyan-400" />
                 )}
                 <span className="text-lg">{item.icon}</span>
                 <span>{item.label}</span>
@@ -109,7 +109,7 @@ export function AppShell({
                 href={item.href}
                 className={`flex items-center gap-3 rounded-2xl px-3 py-2.5 text-sm font-medium transition ${
                   active
-                    ? "bg-gradient-to-l from-violet-500/20 to-fuchsia-500/10 text-white"
+                    ? "bg-gradient-to-l from-teal-500/20 to-cyan-500/10 text-white"
                     : "text-slate-400 hover:bg-white/5 hover:text-white"
                 }`}
               >
@@ -125,7 +125,7 @@ export function AppShell({
             href={`/profile/${user.id}`}
             className="flex items-center gap-3 rounded-2xl bg-white/[0.03] p-2.5 transition hover:bg-white/5"
           >
-            <div className={`flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br ${user.avatarColor || "from-violet-500 to-fuchsia-500"} text-sm font-bold text-white ring-2 ring-slate-900`}>
+            <div className={`flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br ${user.avatarColor || "from-teal-500 to-cyan-500"} text-sm font-bold text-white ring-2 ring-slate-900`}>
               {user.firstName.charAt(0)}
             </div>
             <div className="min-w-0 flex-1">
@@ -165,7 +165,7 @@ export function AppShell({
           <NotificationBell />
           <Link
             href="/post"
-            className="grid h-9 w-9 place-items-center rounded-full bg-gradient-to-br from-violet-500 to-fuchsia-500 text-white shadow-lg shadow-violet-500/30"
+            className="grid h-9 w-9 place-items-center rounded-full bg-gradient-to-br from-teal-500 to-cyan-500 text-white shadow-lg shadow-teal-500/30"
             aria-label="نشر"
           >
             <svg className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
@@ -181,7 +181,7 @@ export function AppShell({
           </Link>
           <Link
             href={`/profile/${user.id}`}
-            className={`flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br ${user.avatarColor || "from-violet-500 to-fuchsia-500"} text-sm font-bold text-white ring-2 ring-slate-900`}
+            className={`flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br ${user.avatarColor || "from-teal-500 to-cyan-500"} text-sm font-bold text-white ring-2 ring-slate-900`}
             aria-label="الملف الشخصي"
           >
             {user.firstName.charAt(0)}
@@ -206,7 +206,7 @@ export function AppShell({
               href={item.href}
               className={`flex flex-col items-center justify-center rounded-xl py-1.5 text-[10px] transition ${
                 active
-                  ? "bg-gradient-to-b from-violet-500/20 to-fuchsia-500/20 text-violet-200"
+                  ? "bg-gradient-to-b from-teal-500/20 to-cyan-500/20 text-teal-200"
                   : "text-slate-400"
               }`}
             >
@@ -220,7 +220,7 @@ export function AppShell({
       {/* Mobile FAB (more) */}
       <button
         onClick={() => setShowMore(true)}
-        className="fixed bottom-20 left-4 z-20 grid h-12 w-12 place-items-center rounded-full bg-gradient-to-br from-violet-600 to-fuchsia-600 text-xl text-white shadow-xl shadow-violet-500/40 lg:hidden"
+        className="fixed bottom-20 left-4 z-20 grid h-12 w-12 place-items-center rounded-full bg-gradient-to-br from-teal-600 to-cyan-600 text-xl text-white shadow-xl shadow-teal-500/40 lg:hidden"
         aria-label="المزيد"
       >
         ☰
