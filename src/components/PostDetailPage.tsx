@@ -111,7 +111,7 @@ export function PostDetailPage({ postId, currentUser }: { postId: number; curren
           <Link href={`/profile/${post.authorId}`} className="flex items-center gap-3">
             <div
               className={`flex h-11 w-11 items-center justify-center rounded-full bg-gradient-to-br ${
-                post.authorColor || "from-violet-500 to-fuchsia-500"
+                post.authorColor || "from-teal-500 to-cyan-500"
               } text-sm font-bold text-white`}
             >
               {post.authorFirst.charAt(0)}
@@ -129,7 +129,7 @@ export function PostDetailPage({ postId, currentUser }: { postId: number; curren
             {post.mediaUrl.startsWith("data:image") || post.mediaUrl.startsWith("http") ? (
               <img src={post.mediaUrl} alt="" className="w-full rounded-2xl object-cover" />
             ) : (
-              <div className="aspect-[16/9] w-full rounded-2xl bg-gradient-to-br from-violet-500 to-fuchsia-500" />
+              <div className="aspect-[16/9] w-full rounded-2xl bg-gradient-to-br from-teal-500 to-cyan-500" />
             )}
           </div>
         )}
@@ -138,7 +138,7 @@ export function PostDetailPage({ postId, currentUser }: { postId: number; curren
             {post.mediaUrl.startsWith("data:video") || post.mediaUrl.startsWith("http") ? (
               <video src={post.mediaUrl} controls className="w-full rounded-2xl bg-black" />
             ) : (
-              <div className="flex aspect-video w-full items-center justify-center rounded-2xl bg-gradient-to-br from-slate-700 to-violet-700 text-5xl text-white">▶</div>
+              <div className="flex aspect-video w-full items-center justify-center rounded-2xl bg-gradient-to-br from-slate-700 to-teal-700 text-5xl text-white">▶</div>
             )}
           </div>
         )}
@@ -157,7 +157,7 @@ export function PostDetailPage({ postId, currentUser }: { postId: number; curren
           {post.tags && post.tags.length > 0 && (
             <div className="mt-3 flex flex-wrap gap-1.5">
               {post.tags.map((t) => (
-                <span key={t} className="rounded-full bg-violet-500/15 px-2.5 py-0.5 text-xs text-violet-200">
+                <span key={t} className="rounded-full bg-teal-500/15 px-2.5 py-0.5 text-xs text-teal-200">
                   #{t}
                 </span>
               ))}
@@ -188,19 +188,19 @@ export function PostDetailPage({ postId, currentUser }: { postId: number; curren
           onChange={(e) => setText(e.target.value)}
           rows={3}
           placeholder="اكتب تعليقك..."
-          className="w-full resize-none rounded-2xl border border-white/10 bg-slate-800/50 p-3 text-slate-100 outline-none focus:border-violet-500"
+          className="w-full resize-none rounded-2xl border border-white/10 bg-slate-800/50 p-3 text-slate-100 outline-none focus:border-teal-500"
         />
         <div className="mt-2 flex justify-between gap-2">
           <button
             onClick={aiSuggest}
             disabled={aiBusy}
-            className="rounded-xl bg-violet-500/20 px-3 py-1.5 text-xs text-violet-200 hover:bg-violet-500/30 disabled:opacity-50"
+            className="rounded-xl bg-teal-500/20 px-3 py-1.5 text-xs text-teal-200 hover:bg-teal-500/30 disabled:opacity-50"
           >
             {aiBusy ? "..." : "✨ تعليق ذكي"}
           </button>
           <button
             onClick={send}
-            className="rounded-xl bg-gradient-to-l from-violet-600 to-fuchsia-600 px-4 py-1.5 text-sm font-semibold text-white"
+            className="rounded-xl bg-gradient-to-l from-teal-600 to-cyan-600 px-4 py-1.5 text-sm font-semibold text-white"
           >
             نشر
           </button>
@@ -218,7 +218,7 @@ export function PostDetailPage({ postId, currentUser }: { postId: number; curren
               <div
                 className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-gradient-to-br ${
                   c.isAi
-                    ? "from-violet-500 to-fuchsia-500"
+                    ? "from-teal-500 to-cyan-500"
                     : c.authorColor || "from-emerald-500 to-teal-500"
                 } text-xs font-bold text-white`}
               >
