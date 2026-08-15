@@ -69,7 +69,7 @@ export function MusicPage() {
 
       {/* Player */}
       {playing && (
-        <div className="rounded-3xl border border-violet-500/20 bg-gradient-to-br from-violet-500/10 to-fuchsia-500/10 p-5">
+        <div className="rounded-3xl border border-teal-500/20 bg-gradient-to-br from-teal-500/10 to-cyan-500/10 p-5">
           <div className="flex items-center gap-4">
             <div className={`flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br ${playing.color} text-3xl`}>
               {playing.emoji}
@@ -79,7 +79,7 @@ export function MusicPage() {
               <p className="text-sm text-slate-300">{playing.artist} · {playing.category}</p>
               <div className="mt-2 h-1.5 overflow-hidden rounded-full bg-white/10">
                 <div
-                  className="h-full bg-gradient-to-l from-violet-500 to-fuchsia-500 transition-all"
+                  className="h-full bg-gradient-to-l from-teal-500 to-cyan-500 transition-all"
                   style={{ width: `${progress}%` }}
                 />
               </div>
@@ -100,7 +100,7 @@ export function MusicPage() {
             key={c.k}
             onClick={() => setCat(c.k)}
             className={`rounded-full px-4 py-1.5 text-xs font-medium ${
-              cat === c.k ? "bg-violet-500/30 text-violet-100 ring-1 ring-violet-400/50" : "bg-white/5 text-slate-300 hover:bg-white/10"
+              cat === c.k ? "bg-teal-500/30 text-teal-100 ring-1 ring-teal-400/50" : "bg-white/5 text-slate-300 hover:bg-white/10"
             }`}
           >
             {c.l}
@@ -127,7 +127,7 @@ export function MusicPage() {
               </div>
               <button
                 onClick={() => setPlaying(t)}
-                className="grid h-10 w-10 place-items-center rounded-full bg-violet-500/20 text-violet-200 hover:bg-violet-500/30"
+                className="grid h-10 w-10 place-items-center rounded-full bg-teal-500/20 text-teal-200 hover:bg-teal-500/30"
               >
                 ▶
               </button>
@@ -198,7 +198,7 @@ export function MusicPage() {
                   setPlaying(mergeWith);
                   setMergeWith(null);
                 }}
-                className="flex-1 rounded-2xl bg-gradient-to-l from-violet-600 to-fuchsia-600 py-2.5 text-sm font-semibold text-white"
+                className="flex-1 rounded-2xl bg-gradient-to-l from-teal-600 to-cyan-600 py-2.5 text-sm font-semibold text-white"
               >
                 🎬 دمج في المنشور
               </button>
