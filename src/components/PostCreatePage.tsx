@@ -41,13 +41,13 @@ export function PostCreatePage() {
   const [, startTransition] = useTransition();
 
   const SAMPLE_MEDIA: { type: "image" | "video" | "short"; gradient: string; label: string }[] = [
-    { type: "image", gradient: "from-violet-500 via-fuchsia-500 to-pink-500", label: "صورة 1" },
-    { type: "image", gradient: "from-amber-400 via-rose-500 to-fuchsia-500", label: "صورة 2" },
+    { type: "image", gradient: "from-teal-500 via-cyan-500 to-indigo-500", label: "صورة 1" },
+    { type: "image", gradient: "from-amber-400 via-rose-500 to-cyan-500", label: "صورة 2" },
     { type: "image", gradient: "from-emerald-500 via-cyan-500 to-blue-600", label: "صورة 3" },
     { type: "image", gradient: "from-sky-500 via-indigo-500 to-purple-600", label: "صورة 4" },
-    { type: "video", gradient: "from-slate-700 via-violet-700 to-fuchsia-700", label: "فيديو 1" },
-    { type: "video", gradient: "from-rose-700 via-pink-700 to-violet-700", label: "فيديو 2" },
-    { type: "short", gradient: "from-indigo-600 via-violet-600 to-fuchsia-500", label: "Short 1" },
+    { type: "video", gradient: "from-slate-700 via-teal-700 to-cyan-700", label: "فيديو 1" },
+    { type: "video", gradient: "from-rose-700 via-indigo-700 to-teal-700", label: "فيديو 2" },
+    { type: "short", gradient: "from-indigo-600 via-teal-600 to-cyan-500", label: "Short 1" },
     { type: "short", gradient: "from-cyan-500 via-sky-500 to-indigo-600", label: "Short 2" },
   ];
 
@@ -200,7 +200,7 @@ export function PostCreatePage() {
               onChange={(e) => setContent(e.target.value)}
               rows={6}
               placeholder="بم تفكر؟ شاركنا إبداعك..."
-              className="w-full resize-none rounded-2xl border border-white/10 bg-slate-800/50 p-4 text-slate-100 placeholder-slate-500 outline-none focus:border-violet-500 focus:ring-2 focus:ring-violet-500/30"
+              className="w-full resize-none rounded-2xl border border-white/10 bg-slate-800/50 p-4 text-slate-100 placeholder-slate-500 outline-none focus:border-teal-500 focus:ring-2 focus:ring-teal-500/30"
             />
             <div className="mt-3 flex flex-wrap items-center gap-2">
               <select
@@ -217,7 +217,7 @@ export function PostCreatePage() {
                 type="button"
                 onClick={enhance}
                 disabled={aiBusy || !content.trim()}
-                className="rounded-xl bg-violet-500/20 px-3 py-1.5 text-xs font-semibold text-violet-200 hover:bg-violet-500/30 disabled:opacity-50"
+                className="rounded-xl bg-teal-500/20 px-3 py-1.5 text-xs font-semibold text-teal-200 hover:bg-teal-500/30 disabled:opacity-50"
               >
                 {aiBusy ? "✨ جاري التحسين..." : "✨ تحسين بالذكاء الاصطناعي"}
               </button>
@@ -238,7 +238,7 @@ export function PostCreatePage() {
                       if (t === "text") setMedia(null);
                     }}
                     className={`rounded-full px-3 py-1 text-xs ${
-                      mediaType === t ? "bg-violet-500/30 text-violet-200" : "bg-white/5 text-slate-300"
+                      mediaType === t ? "bg-teal-500/30 text-teal-200" : "bg-white/5 text-slate-300"
                     }`}
                   >
                     {t === "text" ? "نص فقط" : t === "image" ? "🖼️" : t === "video" ? "🎬" : "▶️ Short"}
@@ -261,7 +261,7 @@ export function PostCreatePage() {
                     type="button"
                     onClick={() => fileInputRef.current?.click()}
                     disabled={uploading}
-                    className="rounded-xl bg-gradient-to-l from-violet-600 to-fuchsia-600 px-3 py-1.5 text-xs font-semibold text-white shadow hover:from-violet-500 hover:to-fuchsia-500 disabled:opacity-50"
+                    className="rounded-xl bg-gradient-to-l from-teal-600 to-cyan-600 px-3 py-1.5 text-xs font-semibold text-white shadow hover:from-teal-500 hover:to-cyan-500 disabled:opacity-50"
                   >
                     {uploading ? "⏳ جاري الرفع..." : "📤 رفع من الجهاز"}
                   </button>
@@ -275,7 +275,7 @@ export function PostCreatePage() {
                       onChange={(e) => setCompression(parseInt(e.target.value, 10))}
                       className="w-28"
                     />
-                    <span className="text-violet-300">{compression}%</span>
+                    <span className="text-teal-300">{compression}%</span>
                   </div>
                 </div>
 
@@ -287,7 +287,7 @@ export function PostCreatePage() {
                       ) : media.kind === "upload" && media.type === "video" ? (
                         <video src={media.url} controls className="max-h-96 w-full" />
                       ) : (
-                        <div className={`flex aspect-video w-full items-center justify-center bg-gradient-to-br ${SAMPLE_MEDIA[parseInt(media.url)]?.gradient || "from-violet-500 to-fuchsia-500"}`}>
+                        <div className={`flex aspect-video w-full items-center justify-center bg-gradient-to-br ${SAMPLE_MEDIA[parseInt(media.url)]?.gradient || "from-teal-500 to-cyan-500"}`}>
                           <div className="flex h-16 w-16 items-center justify-center rounded-full bg-white/20 text-3xl text-white backdrop-blur">
                             {mediaType === "short" ? "▶" : "🎬"}
                           </div>
@@ -341,7 +341,7 @@ export function PostCreatePage() {
                   onClick={() => setMusic(music?.id === t.id ? null : t)}
                   className={`flex items-center gap-2 rounded-xl border px-2 py-2 text-xs transition ${
                     music?.id === t.id
-                      ? "border-violet-500 bg-violet-500/20 text-violet-100"
+                      ? "border-teal-500 bg-teal-500/20 text-teal-100"
                       : "border-white/10 bg-white/5 text-slate-200 hover:bg-white/10"
                   }`}
                 >
@@ -351,9 +351,9 @@ export function PostCreatePage() {
               ))}
             </div>
             {music && (
-              <div className="mt-3 flex items-center justify-between rounded-2xl bg-violet-500/10 px-3 py-2 text-xs text-violet-100">
+              <div className="mt-3 flex items-center justify-between rounded-2xl bg-teal-500/10 px-3 py-2 text-xs text-teal-100">
                 <span>🎵 {music.title} — {music.artist}</span>
-                <button onClick={() => setMusic(null)} className="text-violet-300 hover:text-rose-300">إزالة ✕</button>
+                <button onClick={() => setMusic(null)} className="text-teal-300 hover:text-rose-300">إزالة ✕</button>
               </div>
             )}
           </div>
@@ -367,12 +367,12 @@ export function PostCreatePage() {
                 onChange={(e) => setTagInput(e.target.value)}
                 onKeyDown={(e) => e.key === "Enter" && (e.preventDefault(), addTag())}
                 placeholder="أضف وسم..."
-                className="flex-1 rounded-xl border border-white/10 bg-slate-800/50 px-3 py-2 text-sm text-slate-100 outline-none focus:border-violet-500"
+                className="flex-1 rounded-xl border border-white/10 bg-slate-800/50 px-3 py-2 text-sm text-slate-100 outline-none focus:border-teal-500"
               />
               <button
                 type="button"
                 onClick={addTag}
-                className="rounded-xl bg-violet-500/20 px-3 py-2 text-sm text-violet-200 hover:bg-violet-500/30"
+                className="rounded-xl bg-teal-500/20 px-3 py-2 text-sm text-teal-200 hover:bg-teal-500/30"
               >
                 إضافة
               </button>
@@ -380,7 +380,7 @@ export function PostCreatePage() {
             {tags.length > 0 && (
               <div className="mt-3 flex flex-wrap gap-1.5">
                 {tags.map((t) => (
-                  <span key={t} className="flex items-center gap-1 rounded-full bg-violet-500/20 px-2.5 py-1 text-xs text-violet-100">
+                  <span key={t} className="flex items-center gap-1 rounded-full bg-teal-500/20 px-2.5 py-1 text-xs text-teal-100">
                     #{t}
                     <button onClick={() => setTags(tags.filter((x) => x !== t))}>✕</button>
                   </span>
@@ -391,9 +391,9 @@ export function PostCreatePage() {
         </div>
 
         <div className="space-y-4">
-          <div className="rounded-3xl border border-violet-500/20 bg-violet-500/5 p-5 text-sm text-violet-100">
+          <div className="rounded-3xl border border-teal-500/20 bg-teal-500/5 p-5 text-sm text-teal-100">
             <h3 className="font-semibold">💡 نصائح للنشر</h3>
-            <ul className="mt-2 space-y-1.5 text-xs text-violet-200/80">
+            <ul className="mt-2 space-y-1.5 text-xs text-teal-200/80">
               <li>• استخدم أداة الذكاء الاصطناعي لتحسين النص</li>
               <li>• يمكنك رفع صور أو فيديوهات من جهازك</li>
               <li>• أضف وسوماً مناسبة لزيادة الوصول</li>
@@ -413,7 +413,7 @@ export function PostCreatePage() {
           <button
             onClick={submit}
             disabled={busy}
-            className="w-full rounded-2xl bg-gradient-to-l from-violet-600 to-fuchsia-600 px-4 py-3.5 text-base font-semibold text-white shadow-lg shadow-violet-500/30 hover:from-violet-500 hover:to-fuchsia-500 disabled:opacity-60"
+            className="w-full rounded-2xl bg-gradient-to-l from-teal-600 to-cyan-600 px-4 py-3.5 text-base font-semibold text-white shadow-lg shadow-teal-500/30 hover:from-teal-500 hover:to-cyan-500 disabled:opacity-60"
           >
             {busy ? "جاري النشر..." : "🚀 نشر الآن"}
           </button>
