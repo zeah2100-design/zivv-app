@@ -145,7 +145,7 @@ export function FriendsPage() {
                 <Link href={`/profile/${r.requesterId}`} className="flex items-center gap-3">
                   <div
                     className={`flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br ${
-                      r.avatarColor || "from-violet-500 to-fuchsia-500"
+                      r.avatarColor || "from-teal-500 to-cyan-500"
                     } text-base font-bold text-white`}
                   >
                     {r.firstName.charAt(0)}
@@ -159,7 +159,7 @@ export function FriendsPage() {
                   <button
                     onClick={() => respond(r.requesterId, "accept")}
                     disabled={busy}
-                    className="rounded-xl bg-gradient-to-l from-violet-600 to-fuchsia-600 px-4 py-1.5 text-sm font-semibold text-white shadow disabled:opacity-50"
+                    className="rounded-xl bg-gradient-to-l from-teal-600 to-cyan-600 px-4 py-1.5 text-sm font-semibold text-white shadow disabled:opacity-50"
                   >
                     قبول
                   </button>
@@ -206,7 +206,7 @@ export function FriendsPage() {
                 <div className="ms-auto flex items-center gap-1">
                   <Link
                     href={`/chat?new=${f.friendId}`}
-                    className="rounded-xl bg-violet-500/15 px-3 py-1.5 text-xs text-violet-200 hover:bg-violet-500/25"
+                    className="rounded-xl bg-teal-500/15 px-3 py-1.5 text-xs text-teal-200 hover:bg-teal-500/25"
                   >
                     💬 مراسلة
                   </Link>
@@ -231,7 +231,7 @@ export function FriendsPage() {
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               placeholder="ابحث عن أشخاص بالاسم..."
-              className="w-full rounded-2xl border border-white/10 bg-slate-900/60 py-3 ps-10 pe-4 text-slate-100 outline-none focus:border-violet-500"
+              className="w-full rounded-2xl border border-white/10 bg-slate-900/60 py-3 ps-10 pe-4 text-slate-100 outline-none focus:border-teal-500"
             />
             <span className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-slate-500">🔍</span>
           </div>
@@ -261,7 +261,7 @@ export function FriendsPage() {
                       <button
                         onClick={() => requestAdd(d.id)}
                         disabled={busy}
-                        className="rounded-xl bg-gradient-to-l from-violet-600 to-fuchsia-600 px-3 py-1.5 text-xs font-semibold text-white shadow disabled:opacity-50"
+                        className="rounded-xl bg-gradient-to-l from-teal-600 to-cyan-600 px-3 py-1.5 text-xs font-semibold text-white shadow disabled:opacity-50"
                       >
                         + إضافة
                       </button>
@@ -317,7 +317,7 @@ function TabBtn({ children, active, onClick }: { children: React.ReactNode; acti
     <button
       onClick={onClick}
       className={`flex-1 rounded-xl py-2 font-semibold transition ${
-        active ? "bg-gradient-to-l from-violet-600 to-fuchsia-600 text-white shadow" : "text-slate-300"
+        active ? "bg-gradient-to-l from-teal-600 to-cyan-600 text-white shadow" : "text-slate-300"
       }`}
     >
       {children}
