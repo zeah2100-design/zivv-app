@@ -19,8 +19,8 @@ type Status = {
 };
 
 const GRADIENTS = [
-  "from-violet-500 to-fuchsia-500",
-  "from-rose-500 to-pink-500",
+  "from-teal-500 to-cyan-500",
+  "from-rose-500 to-indigo-500",
   "from-amber-500 to-orange-500",
   "from-emerald-500 to-teal-500",
   "from-sky-500 to-cyan-500",
@@ -97,7 +97,7 @@ export function StatusPage({ user }: { user: SafeUser }) {
               onChange={(e) => setContent(e.target.value)}
               rows={3}
               placeholder="بم تفكر اليوم؟"
-              className="w-full resize-none rounded-2xl border border-white/10 bg-slate-800/50 p-3 text-slate-100 outline-none focus:border-violet-500"
+              className="w-full resize-none rounded-2xl border border-white/10 bg-slate-800/50 p-3 text-slate-100 outline-none focus:border-teal-500"
             />
             <div className="mt-2 flex flex-wrap gap-1.5">
               {GRADIENTS.map((g) => (
@@ -117,7 +117,7 @@ export function StatusPage({ user }: { user: SafeUser }) {
         <button
           onClick={publish}
           disabled={!content.trim()}
-          className="mt-3 rounded-2xl bg-gradient-to-l from-violet-600 to-fuchsia-600 px-5 py-2 text-sm font-semibold text-white disabled:opacity-50"
+          className="mt-3 rounded-2xl bg-gradient-to-l from-teal-600 to-cyan-600 px-5 py-2 text-sm font-semibold text-white disabled:opacity-50"
         >
           نشر الحالة
         </button>
