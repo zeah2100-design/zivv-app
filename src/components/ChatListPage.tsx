@@ -63,7 +63,7 @@ export function ChatListPage() {
           </Link>
           <button
             onClick={newChat}
-            className="rounded-2xl bg-gradient-to-l from-violet-600 to-fuchsia-600 px-4 py-2 text-sm font-semibold text-white"
+            className="rounded-2xl bg-gradient-to-l from-teal-600 to-cyan-600 px-4 py-2 text-sm font-semibold text-white"
           >
             ✚ محادثة جديدة
           </button>
@@ -90,7 +90,7 @@ export function ChatListPage() {
             >
               <div
                 className={`flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br ${
-                  c.partner?.avatarColor || "from-violet-500 to-fuchsia-500"
+                  c.partner?.avatarColor || "from-teal-500 to-cyan-500"
                 } text-base font-bold text-white`}
               >
                 {c.partner?.firstName.charAt(0)}
