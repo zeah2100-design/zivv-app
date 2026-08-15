@@ -128,13 +128,13 @@ export function ProfilePage({ profileId, currentUser }: { profileId: number; cur
 
   return (
     <div className="space-y-6">
-      <header className="overflow-hidden rounded-3xl border border-white/5 bg-gradient-to-br from-slate-900 via-slate-900 to-violet-950">
-        <div className="h-32 bg-gradient-to-l from-violet-600 via-fuchsia-600 to-pink-500 opacity-60" />
+      <header className="overflow-hidden rounded-3xl border border-white/5 bg-gradient-to-br from-slate-900 via-slate-900 to-teal-950">
+        <div className="h-32 bg-gradient-to-l from-teal-600 via-cyan-600 to-indigo-500 opacity-60" />
         <div className="-mt-12 flex flex-col items-start gap-4 p-6 sm:flex-row sm:items-end sm:justify-between">
           <div className="flex items-end gap-4">
             <div
               className={`flex h-24 w-24 items-center justify-center rounded-3xl bg-gradient-to-br ${
-                user.avatarColor || "from-violet-500 to-fuchsia-500"
+                user.avatarColor || "from-teal-500 to-cyan-500"
               } text-3xl font-bold text-white ring-4 ring-slate-900`}
             >
               {user.firstName.charAt(0)}
@@ -163,7 +163,7 @@ export function ProfilePage({ profileId, currentUser }: { profileId: number; cur
                   <button
                     onClick={sendRequest}
                     disabled={busy}
-                    className="rounded-2xl bg-gradient-to-l from-violet-600 to-fuchsia-600 px-4 py-2 text-sm font-semibold text-white shadow-lg shadow-violet-500/30 hover:from-violet-500 hover:to-fuchsia-500 disabled:opacity-60"
+                    className="rounded-2xl bg-gradient-to-l from-teal-600 to-cyan-600 px-4 py-2 text-sm font-semibold text-white shadow-lg shadow-teal-500/30 hover:from-teal-500 hover:to-cyan-500 disabled:opacity-60"
                   >
                     + إضافة صديق
                   </button>
@@ -210,7 +210,7 @@ export function ProfilePage({ profileId, currentUser }: { profileId: number; cur
         {user.interests && user.interests.length > 0 && (
           <div className="flex flex-wrap gap-1.5 px-6 pb-5">
             {user.interests.map((i) => (
-              <span key={i} className="rounded-full bg-violet-500/20 px-3 py-1 text-xs text-violet-200">
+              <span key={i} className="rounded-full bg-teal-500/20 px-3 py-1 text-xs text-teal-200">
                 {i}
               </span>
             ))}
@@ -272,7 +272,7 @@ export function ProfilePage({ profileId, currentUser }: { profileId: number; cur
                     </div>
                     <div className="h-2 overflow-hidden rounded-full bg-white/5">
                       <div
-                        className="h-full rounded-full bg-gradient-to-l from-violet-500 to-fuchsia-500"
+                        className="h-full rounded-full bg-gradient-to-l from-teal-500 to-cyan-500"
                         style={{ width: `${w}%` }}
                       />
                     </div>
@@ -305,7 +305,7 @@ function TabBtn({ children, active, onClick }: { children: React.ReactNode; acti
     <button
       onClick={onClick}
       className={`-mb-px border-b-2 px-4 py-2 text-sm font-medium transition ${
-        active ? "border-violet-500 text-white" : "border-transparent text-slate-400 hover:text-white"
+        active ? "border-teal-500 text-white" : "border-transparent text-slate-400 hover:text-white"
       }`}
     >
       {children}
